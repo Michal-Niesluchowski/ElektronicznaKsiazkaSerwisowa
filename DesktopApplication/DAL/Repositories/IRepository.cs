@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopApplication.DAL
+namespace DesktopApplication.DAL.Repositories
 {
     public interface IRepository
     {
-        Car AddCar(Car car);
+        bool AddCar(Car car);
     }
 }

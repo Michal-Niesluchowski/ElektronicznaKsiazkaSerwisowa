@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopApplication.Entities
+namespace DesktopApplication.DAL.Models
 {
-    class CarEntity
+    internal class CarEntity
     {
         public Guid CarID { get; set; }
         public string Name { get; set; }

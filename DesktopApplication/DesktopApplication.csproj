@@ -65,10 +65,10 @@
     </Compile>
     <Compile Include="BLL\Car.cs" />
     <Compile Include="BLL\Repair.cs" />
-    <Compile Include="DAL\IRepository.cs" />
-    <Compile Include="DAL\RepositoryXML.cs" />
-    <Compile Include="Entities\CarEntity.cs" />
-    <Compile Include="Entities\RepairEntity.cs" />
+    <Compile Include="DAL\Repositories\IRepository.cs" />
+    <Compile Include="DAL\Models\CarEntity.cs" />
+    <Compile Include="DAL\Models\RepairEntity.cs" />
+    <Compile Include="DAL\Repositories\RepositoryXML.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

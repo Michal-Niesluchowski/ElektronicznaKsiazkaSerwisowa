@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopApplication.DAL
+namespace DesktopApplication.DAL.Models
 {
-    public class RepositoryXML : IRepository
+    internal class RepairEntity
     {
-        public Car AddCar(Car car)
+        internal RepairEntity ConvertToEntity(Repair repair)
         {
-            throw new NotImplementedException();
+            return new RepairEntity();
         }
     }
 }
