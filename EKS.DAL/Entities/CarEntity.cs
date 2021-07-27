@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopApplication.DAL.Models
+namespace DesktopApplication.DAL.Entities
 {
-    internal class CarEntity
+    public class CarEntity
     {
-        public Guid CarID { get; set; }
         public string Name { get; set; }
         public string Plate { get; set; }
         public string Description { get; set; }
         public List<RepairEntity> Repairs { get; set; }
-        public string OwnerTelephone { get; set; }
     }
 }
