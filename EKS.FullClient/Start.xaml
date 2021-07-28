@@ -5,7 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EKS.FullClient"
         mc:Ignorable="d"
-        Title="Elektroniczna Książka Serwisowa" Height="480" Width="800">
+        Title="Elektroniczna Książka Serwisowa" Height="576" Width="1024">
+    <!--Define application resources-->
+    <Window.Resources>
+        <Style x:Key="StyleBrown" TargetType="Control">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontFamily" Value="Calibri" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="Background" Value="#F7E0C1"/>
+        </Style>
+    </Window.Resources>
     
     <!--Define window appearance-->
     <Window.Background>
@@ -27,8 +37,10 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="2"
                     VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="Stwórz nowe auto" Margin="0,0,10,0" Width="200" Height="50"/>
-            <Button Content="Otwórz auto z dysku" Margin="10,0,0,0"  Width="200" Height="50"/>
+            <Button Content="Stwórz nowe auto" Margin="0,0,10,0" Width="200" Height="50"
+                    Style="{StaticResource StyleBrown}" />
+            <Button Content="Otwórz auto z dysku" Margin="10,0,0,0"  Width="200" Height="50"
+                    Style="{StaticResource StyleBrown}" />
         </StackPanel>
     </Grid>
     
