@@ -2,7 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:EKS.FullClient"
-             StartupUri="Windows/Home.xaml">
+             StartupUri="Views/AddNewCar.xaml">
+    
     <Application.Resources>
         
         <!--Style for all buttons in application-->

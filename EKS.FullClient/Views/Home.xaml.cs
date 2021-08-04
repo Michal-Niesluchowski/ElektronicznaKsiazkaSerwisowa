@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace EKS.FullClient.Windows
+namespace EKS.FullClient.Views
 {
     /// <summary>
-    /// Interaction logic for AddNewCar.xaml
+    /// Interaction logic for Home.xaml
     /// </summary>
-    public partial class AddNewCar : Window
+    public partial class Home : Window
     {
-        public AddNewCar()
+        public Home()
         {
             InitializeComponent();
         }
