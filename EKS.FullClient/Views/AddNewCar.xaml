@@ -11,26 +11,32 @@
     <!--Define labels and textboxes-->
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60" ></RowDefinition>
+            <RowDefinition Height="50*" MinHeight="50"></RowDefinition>
         </Grid.RowDefinitions>
         
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-            <Label Content="Nazwa samochodu" Margin="0,0,5,10" Width="200" Height="50"/>
-            <TextBox Text="..." Margin="5,0,0,10" Width="300" Height="50" TextWrapping="Wrap" />
+            <Label Content="Nazwa samochodu" Margin="0,0,0,0" Width="200" Height="50"/>
+            <TextBox Text="..." Width="300" Height="50" TextWrapping="Wrap" />
         </StackPanel>
         
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
-            <Label Content="Tablica rejestracyjna" Margin="0,0,5,10" Width="200" Height="50"/>
-            <TextBox Text="..." Margin="5,0,0,10" Width="300" Height="50" TextWrapping="Wrap" />
+            <Label Content="Tablica rejestracyjna" Margin="0,0,0,0" Width="200" Height="50"/>
+            <TextBox Text="..." Width="300" Height="50" TextWrapping="Wrap" />
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
-            <Label Content="Opis" Margin="0,0,5,10" Width="200" Height="50" />
-            <TextBox Text="..." Margin="5,0,0,10" Width="300" Height="50" TextWrapping="Wrap" />
+            <Label Content="Opis" Margin="0,0,0,0" Width="200" Height="50" />
+            <TextBox Text="..." Width="300" Height="50" TextWrapping="Wrap" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="5"
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Anuluj" Margin="0,0,10,0" Width="200" Height="50"/>
+            <Button Content="Zapisz" Width="200" Height="50"/>
         </StackPanel>
 
     </Grid>
