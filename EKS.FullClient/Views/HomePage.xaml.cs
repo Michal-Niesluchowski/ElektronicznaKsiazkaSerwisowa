@@ -15,13 +15,19 @@ using System.Windows.Shapes;
 namespace EKS.FullClient.Views
 {
     /// <summary>
-    /// Interaction logic for AddNewCar.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class AddNewCar : Window
+    public partial class HomePage : Page
     {
-        public AddNewCar()
+        public HomePage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NewCarPage newPage = new NewCarPage();
+            NavigationService.Navigate(newPage);
         }
     }
 }

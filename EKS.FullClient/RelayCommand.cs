@@ -4,20 +4,13 @@ using System.Windows.Input;
 
 namespace EKS.FullClient
 {
-    /// <summary>
-    /// A command whose sole purpose is to 
-    /// relay its functionality to other
-    /// objects by invoking delegates. The
-    /// default return value for the CanExecute
-    /// method is 'true'.
-    /// </summary>
     public class RelayCommand : ICommand
     {
         #region Fields 
         readonly Action<object> _execute;
         readonly Predicate<object> _canExecute;
         #endregion // Fields 
-        
+
         #region Constructors 
         public RelayCommand(Action<object> execute) : this(execute, null) { }
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
@@ -27,7 +20,7 @@ namespace EKS.FullClient
             _execute = execute; _canExecute = canExecute;
         }
         #endregion // Constructors 
-        
+
         #region ICommand Members 
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)

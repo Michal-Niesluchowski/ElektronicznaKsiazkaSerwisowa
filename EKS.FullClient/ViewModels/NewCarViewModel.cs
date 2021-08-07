@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EKS.FullClient.ViewModel
+namespace EKS.FullClient.ViewModels
 {
-    class AddNewCarViewModel
+    public class NewCarViewModel
     {
     }
 }

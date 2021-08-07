@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EKS.FullClient.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,12 @@ using System.Windows.Shapes;
 namespace EKS.FullClient.Views
 {
     /// <summary>
-    /// Interaction logic for Home.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Home : Window
+    
+    public partial class MainWindow : Window
     {
-        public Home()
+        public MainWindow()
         {
             InitializeComponent();
         }
