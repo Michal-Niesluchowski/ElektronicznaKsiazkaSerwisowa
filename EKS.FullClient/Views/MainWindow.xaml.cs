@@ -26,7 +26,6 @@ namespace EKS.FullClient.Views
         public MainWindow()
         {
             InitializeComponent();
-            MyFrame.Navigate()
         }
     }
 }

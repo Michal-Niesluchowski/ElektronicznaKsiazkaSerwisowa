@@ -1,18 +1,13 @@
 ﻿using EKS.FullClient.Services.DependencyInjection;
-using EKS.FullClient.Services.PageNavaigationService;
-using EKS.FullClient.ViewModels;
-using EKS.FullClient.Views;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 
 namespace EKS.FullClient.ViewModels
 {
-    public class BaseViewModel 
+    class BaseViewModel
     {
         public MainWindowViewModel MainWindowViewModel
         {

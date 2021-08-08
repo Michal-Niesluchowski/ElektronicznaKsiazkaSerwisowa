@@ -8,6 +8,6 @@
         Title="Elektroniczna Książka Serwisowa" Height="576" Width="1024"
         DataContext="{Binding MainWindowViewModel, Source={StaticResource BaseViewModel}}">
  
-    <Frame x:Name="MyFrame" Content="{Binding SelectedPage}" NavigationUIVisibility="Hidden"/>
+    <Frame x:Name="MyFrame" Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden"/>
     
 </Window>

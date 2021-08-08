@@ -1,5 +1,4 @@
 ﻿using EKS.FullClient.Services.EventAggregatorService;
-using EKS.FullClient.Services.PageNavaigationService;
 using EKS.FullClient.Views;
 using Prism.Events;
 using Prism.Mvvm;
@@ -12,17 +11,16 @@ using System.Windows.Input;
 
 namespace EKS.FullClient.ViewModels
 {
-    public class HomePageViewModel
+    public class HomePageViewModel 
     {
         #region fields
-        private IPageNavigation _pageNavigation;
+        private IEventAggregator _eventAggregator;
         #endregion
 
         #region constructors
-        public HomePageViewModel(IPageNavigation pageNavigation)
+        public HomePageViewModel(IEventAggregator eventAggregator)
         {
-            _pageNavigation = pageNavigation;
-
+            _eventAggregator = eventAggregator;
             this.GoToNewCarPageCommand = new RelayCommand(
                 action => GoToNewCarPage());
         }
@@ -35,7 +33,7 @@ namespace EKS.FullClient.ViewModels
         #region methods
         private void GoToNewCarPage()
         {
-            _pageNavigation.NavigateToPage("NewCar");
+            _eventAggregator.GetEvent<PageChangedEvent>().Publish(new NewCarPage());
         }
         #endregion
     }

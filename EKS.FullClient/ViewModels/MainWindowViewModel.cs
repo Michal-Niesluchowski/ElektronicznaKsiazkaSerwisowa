@@ -8,26 +8,25 @@ using System.Windows.Controls;
 using EKS.FullClient.Views;
 using Prism.Events;
 using EKS.FullClient.Services.EventAggregatorService;
-using EKS.FullClient.Services.PageNavaigationService;
 
 namespace EKS.FullClient.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         #region fields
-        private Page _selectedPage;
+        private Page _currentPage;
         #endregion
 
         #region constructors
         public MainWindowViewModel(IEventAggregator eventAggregator)
         {
-            _selectedPage = new HomePage();
-            eventAggregator.GetEvent<PageChangedEvent>().Subscribe(ChangePage);
+            CurrentPage = new HomePage();
+            eventAggregator.GetEvent<PageChangedEvent>().Subscribe(UpdateCurrentPage);
         }
 
-        private void ChangePage(Page newPage)
+        private void UpdateCurrentPage(Page newPage)
         {
-            SelectedPage = newPage;
+            CurrentPage = newPage;
         }
         #endregion
 
@@ -43,15 +42,15 @@ namespace EKS.FullClient.ViewModels
         #endregion
 
         #region properties
-        public Page SelectedPage
+        public Page CurrentPage
         {
             get
             {
-                return _selectedPage;
+                return _currentPage;
             }
             set 
             {
-                _selectedPage = value;
+                _currentPage = value;
                 OnPropertyChanged(); 
             }
         }

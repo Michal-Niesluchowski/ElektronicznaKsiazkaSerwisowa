@@ -50,6 +50,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -78,13 +80,10 @@
     <Compile Include="Services\EventAggregatorService\NewCarEvent.cs" />
     <Compile Include="Services\EventAggregatorService\PageChangedEvent.cs" />
     <Compile Include="Services\DependencyInjection\IocKernel.cs" />
-    <Compile Include="Services\PageRegisterService\IPageNavigation.cs" />
-    <Compile Include="Services\PageRegisterService\PageItem.cs" />
-    <Compile Include="Services\PageRegisterService\PageNavigation.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\NewCarViewModel.cs" />
-    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="Views\NewCarPage.xaml.cs">
       <DependentUpon>NewCarPage.xaml</DependentUpon>
     </Compile>

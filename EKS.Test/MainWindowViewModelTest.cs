@@ -1,5 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using EKS.FullClient.ViewModels;
+using EKS.FullClient.Services.DependencyInjection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
+using Prism.Events;
 
 namespace EKS.Test
 {
@@ -10,10 +14,13 @@ namespace EKS.Test
         public void NewMainWindowTest()
         {
             //Arrange
+            var mock = new Mock<IEventAggregator>();
 
             //Act
+            MainWindowViewModel viewModel = new MainWindowViewModel(mock.Object);
 
             //Assert
+            viewModel.CurrentPage =
         }
     }
 }

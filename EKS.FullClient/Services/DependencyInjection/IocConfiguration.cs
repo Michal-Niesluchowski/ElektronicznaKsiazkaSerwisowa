@@ -1,5 +1,4 @@
-﻿using EKS.FullClient.Services.PageNavaigationService;
-using EKS.FullClient.ViewModels;
+﻿using EKS.FullClient.ViewModels;
 using Ninject.Modules;
 using Prism.Events;
 using System;
@@ -15,8 +14,6 @@ namespace EKS.FullClient.Services.DependencyInjection
         public override void Load()
         {
             Bind<IEventAggregator>().To<EventAggregator>().InSingletonScope();
-
-            Bind<IPageNavigation>().To<PageNavigation>().InTransientScope();
 
             Bind<MainWindowViewModel>().ToSelf().InTransientScope();
 
