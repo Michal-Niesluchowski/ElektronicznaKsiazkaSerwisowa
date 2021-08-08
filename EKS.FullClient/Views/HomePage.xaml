@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:EKS.FullClient.Views"
         mc:Ignorable="d"
         Title="Elektroniczna Książka Serwisowa" Height="576" Width="1024"
-        Style="{StaticResource CarInBackground}">
+        Style="{StaticResource CarInBackground}"
+        DataContext="{Binding HomePageViewModel, Source={StaticResource BaseViewModel}}">
 
     <Grid>
         
@@ -23,7 +24,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="5"
                     VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button Content="Dodaj auto" Margin="0,0,10,0" Width="200" Height="50"
-                    Click="Button_Click"/>
+                    Command="{Binding GoToNewCarPageCommand}"/>
             <Button Content="Otwórz auto z dysku" Width="200" Height="50"/>
         </StackPanel>
     </Grid>

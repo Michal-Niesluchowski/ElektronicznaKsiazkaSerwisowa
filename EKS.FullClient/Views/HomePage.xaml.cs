@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EKS.FullClient.Services.EventAggregatorService;
+using EKS.FullClient.ViewModels;
+using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,16 +21,10 @@ namespace EKS.FullClient.Views
     /// Interaction logic for HomePage.xaml
     /// </summary>
     public partial class HomePage : Page
-    {
+    {   
         public HomePage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            NewCarPage newPage = new NewCarPage();
-            NavigationService.Navigate(newPage);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopApplication.BLL
+namespace EKS.Models
 {
     public class Repair
     {

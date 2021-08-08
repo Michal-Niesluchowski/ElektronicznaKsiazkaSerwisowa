@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopApplication.BLL
+namespace EKS.Models
 {
     public class Car
     {
@@ -19,6 +19,11 @@ namespace DesktopApplication.BLL
             this.Plate = plate;
             this.Description = description;
             this.Repairs = new List<Repair>();
+        }
+
+        public override string ToString()
+        {
+            return Name + Plate + Description;
         }
     }
 }

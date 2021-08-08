@@ -1,4 +1,6 @@
-﻿using EKS.FullClient.ViewModels;
+﻿using EKS.FullClient.Services.EventAggregatorService;
+using EKS.FullClient.ViewModels;
+using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +22,11 @@ namespace EKS.FullClient.Views
     /// </summary>
     
     public partial class MainWindow : Window
-    {
+    {   
         public MainWindow()
         {
             InitializeComponent();
+            MyFrame.Navigate()
         }
     }
 }

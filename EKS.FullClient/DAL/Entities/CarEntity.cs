@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesktopApplication.DAL.Entities
+namespace EKS.FullClient.DAL.Entities
 {
     public class CarEntity
     {

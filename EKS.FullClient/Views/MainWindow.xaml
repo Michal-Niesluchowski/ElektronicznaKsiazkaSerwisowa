@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EKS.FullClient.Views"
         mc:Ignorable="d"
-        Title="Elektroniczna Książka Serwisowa" Height="576" Width="1024">
+        Title="Elektroniczna Książka Serwisowa" Height="576" Width="1024"
+        DataContext="{Binding MainWindowViewModel, Source={StaticResource BaseViewModel}}">
  
-    <Frame x:Name="Frame" Source="HomePage.xaml" NavigationUIVisibility="Hidden"/>
+    <Frame x:Name="MyFrame" Content="{Binding SelectedPage}" NavigationUIVisibility="Hidden"/>
     
 </Window>

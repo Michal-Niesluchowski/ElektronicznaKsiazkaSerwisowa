@@ -1,4 +1,4 @@
-﻿using DesktopApplication.DAL.Entities;
+﻿using EKS.FullClient.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace DesktopApplication.DAL.Repositories
+namespace EKS.FullClient.DAL.Repositories
 {
-    public class RepositoryXML
+    public class XMLRepository
     {
         public bool CreateNewCar(CarEntity car, string saveDestination)
         {
