@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="EKS.FullClient.Views.CarMainScreenControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EKS.FullClient.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="576" d:DesignWidth="1024"
+             DataContext="{Binding  CarMainScreenViewModel, Source={StaticResource ViewModelLocator}}">
+    
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        
+        <!--Grid definition-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Information about car-->
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="UNDER CONSTRUCTION"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Car name:"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Car plate:"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Car description:"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Car.Name}"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Car.Plate}"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Car.Description}"/>
+    
+    </Grid>
+</UserControl>

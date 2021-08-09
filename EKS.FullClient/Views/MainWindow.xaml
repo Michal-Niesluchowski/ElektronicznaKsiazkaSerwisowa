@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EKS.FullClient.Views"
         mc:Ignorable="d"
-        Title="Elektroniczna Książka Serwisowa" Height="576" Width="1024"
-        DataContext="{Binding MainWindowViewModel, Source={StaticResource BaseViewModel}}">
+        d:DesignHeight="576" d:DesignWidth="1024"
+        SizeToContent="WidthAndHeight"
+        MinHeight="576" MinWidth="1024"
+        DataContext="{Binding MainWindowViewModel, Source={StaticResource ViewModelLocator}}">
  
-    <Frame x:Name="MyFrame" Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden"/>
+    <ContentControl Content="{Binding CurrentControl}"/>
     
 </Window>

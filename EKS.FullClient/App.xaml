@@ -2,12 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:EKS.FullClient"
-             xmlns:VM="clr-namespace:EKS.FullClient.ViewModels"
+             xmlns:BVM="clr-namespace:EKS.FullClient.Framework"
              StartupUri="Views/MainWindow.xaml">
     
     <Application.Resources>
 
-        <VM:BaseViewModel x:Key="BaseViewModel"/>
+        <BVM:ViewModelLocator x:Key="ViewModelLocator"/>
 
         <!--Default button style-->
         <Style TargetType="Button">
@@ -40,7 +40,7 @@
         </Style>
 
         <!--Custom page background with car-->
-        <Style x:Key="CarInBackground" TargetType="Page">
+        <Style x:Key="CarInBackground" TargetType="UserControl">
             <Setter Property="Background">
                 <Setter.Value>
                     <ImageBrush ImageSource="/images/BackgroundStart.jpg"/>

@@ -5,28 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows.Controls;
-using EKS.FullClient.Views;
 using Prism.Events;
-using EKS.FullClient.Services.EventAggregatorService;
+using EKS.FullClient.Framework.Events;
+using System.Windows;
+using EKS.FullClient.Framework.Navigation;
 
 namespace EKS.FullClient.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         #region fields
-        private Page _currentPage;
+        private UserControl _currentControl;
         #endregion
 
         #region constructors
-        public MainWindowViewModel(IEventAggregator eventAggregator)
+        public MainWindowViewModel(IEventAggregator eventAggregator, INavigationService navigationService)
         {
-            CurrentPage = new HomePage();
-            eventAggregator.GetEvent<PageChangedEvent>().Subscribe(UpdateCurrentPage);
-        }
-
-        private void UpdateCurrentPage(Page newPage)
-        {
-            CurrentPage = newPage;
+            eventAggregator.GetEvent<ControlChangedEvent>().Subscribe(UpdateCurrentControl);
+            navigationService.NavigateToControl(ControlsRegister.HomeControl);
         }
         #endregion
 
@@ -42,17 +38,24 @@ namespace EKS.FullClient.ViewModels
         #endregion
 
         #region properties
-        public Page CurrentPage
+        public UserControl CurrentControl
         {
             get
             {
-                return _currentPage;
+                return _currentControl;
             }
             set 
             {
-                _currentPage = value;
+                _currentControl = value;
                 OnPropertyChanged(); 
             }
+        }
+        #endregion
+
+        #region methods
+        private void UpdateCurrentControl(UserControl newControl)
+        {
+            CurrentControl = newControl;
         }
         #endregion
     }

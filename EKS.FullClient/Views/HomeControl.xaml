@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="EKS.FullClient.Views.HomeControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EKS.FullClient.Views"
+        mc:Ignorable="d"
+        d:DesignHeight="576" d:DesignWidth="1024"
+        Style="{StaticResource CarInBackground}"
+        DataContext="{Binding HomePageViewModel, Source={StaticResource ViewModelLocator}}">
+
+    <Grid>
+        
+        <!--Grid definition-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60" ></RowDefinition>
+            <RowDefinition Height="50*" MinHeight="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Buttons-->
+        <StackPanel Orientation="Horizontal" Grid.Row="5"
+                    VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Dodaj auto" Margin="0,0,10,0" Width="200" Height="50"
+                    Command="{Binding GoToNewCarControlCommand}"/>
+            <Button Content="Otwórz auto z dysku" Width="200" Height="50"/>
+        </StackPanel>
+    </Grid>
+    
+</UserControl>
+

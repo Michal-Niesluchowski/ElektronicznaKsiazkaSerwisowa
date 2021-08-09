@@ -1,6 +1,6 @@
-﻿using EKS.FullClient.Services.EventAggregatorService;
-using EKS.FullClient.Views;
-using EKS.Models;
+﻿using EKS.BackEnd.Models;
+using EKS.FullClient.Framework.Navigation;
+using EKS.FullClient.Framework;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using EKS.FullClient.Framework.TempData;
 
 namespace EKS.FullClient.ViewModels
 {
@@ -19,13 +20,15 @@ namespace EKS.FullClient.ViewModels
         private string _carName = "...";
         private string _carPlate = "...";
         private string _carDescription = "...";
-        IEventAggregator _eventAggregator;
+        private INavigationService _navigationService;
+        private ITempDataService _tempDataService;
         #endregion
 
         #region constructors
-        public NewCarViewModel(IEventAggregator eventAggregator)
+        public NewCarViewModel(INavigationService navigationService, ITempDataService tempDataService)
         {
-            _eventAggregator = eventAggregator;
+            _navigationService = navigationService;
+            _tempDataService = tempDataService;
 
             this.NewCarCommand = new RelayCommand(
                 action => CreateNewCar(),
@@ -75,8 +78,8 @@ namespace EKS.FullClient.ViewModels
         private void CreateNewCar()
         {
             Car newCar = new Car(CarName, CarPlate, CarDescription);
-            _eventAggregator.GetEvent<NewCarEvent>().Publish(newCar);
-            MessageBox.Show(newCar.ToString());
+            _tempDataService.SaveCar(newCar);
+            _navigationService.NavigateToControl(ControlsRegister.CarMainScreenControl);
         }
 
         private bool CanCreateNewCar()
@@ -86,12 +89,12 @@ namespace EKS.FullClient.ViewModels
                 return false;
             };
 
-            if (CarName == "..." || String.IsNullOrWhiteSpace(CarPlate))
+            if (CarName == "..." || String.IsNullOrWhiteSpace(CarName))
             {
                 return false;
             };
 
-            if (CarDescription == "..." || String.IsNullOrWhiteSpace(CarPlate))
+            if (CarDescription == "..." || String.IsNullOrWhiteSpace(CarDescription))
             {
                 return false;
             };
@@ -101,7 +104,7 @@ namespace EKS.FullClient.ViewModels
 
         private void Cancel()
         {
-            _eventAggregator.GetEvent<PageChangedEvent>().Publish(new HomePage());
+            _navigationService.NavigateToControl(ControlsRegister.HomeControl);
         }
         #endregion
     }

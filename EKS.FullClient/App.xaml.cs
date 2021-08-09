@@ -1,4 +1,4 @@
-﻿using EKS.FullClient.Services.DependencyInjection;
+﻿using EKS.FullClient.Framework.Ioc;
 using EKS.FullClient.Views;
 using Ninject;
 using Prism.Events;
@@ -20,6 +20,9 @@ namespace EKS.FullClient
         protected override void OnStartup(StartupEventArgs e)
         {
             IocKernel.Initialize(new IocConfiguration());
+
+            //Beware that there is static class IocKernel
+            //It provides ioc functionality across application
 
             base.OnStartup(e);
         }
