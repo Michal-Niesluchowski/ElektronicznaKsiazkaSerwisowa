@@ -1,5 +1,4 @@
-﻿using EKS.FullClient.Services.EventAggregatorService;
-using EKS.FullClient.ViewModels;
+﻿using EKS.FullClient.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

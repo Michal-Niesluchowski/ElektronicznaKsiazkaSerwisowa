@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Windows.Controls;
 using EKS.FullClient.Views;
 using Prism.Events;
-using EKS.FullClient.Services.EventAggregatorService;
+using EKS.FullClient.Framework.Events;
 
 namespace EKS.FullClient.ViewModels
 {

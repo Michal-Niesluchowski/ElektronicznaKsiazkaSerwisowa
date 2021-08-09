@@ -1,4 +1,5 @@
-﻿using EKS.FullClient.Services.EventAggregatorService;
+﻿
+using EKS.FullClient.Framework.Events;
 using EKS.FullClient.Views;
 using EKS.Models;
 using Prism.Events;

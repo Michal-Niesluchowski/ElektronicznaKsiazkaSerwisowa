@@ -1,5 +1,4 @@
-﻿using EKS.FullClient.Services.EventAggregatorService;
-using EKS.FullClient.ViewModels;
+﻿using EKS.FullClient.ViewModels;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
@@ -22,8 +21,11 @@ namespace EKS.FullClient.Views
     /// </summary>
     public partial class HomePage : Page
     {   
-        public HomePage()
+        private HomePageViewModel ViewModel;
+
+        public HomePage(HomePageViewModel viewModel)
         {
+            DataContext = viewModel;
             InitializeComponent();
         }
     }

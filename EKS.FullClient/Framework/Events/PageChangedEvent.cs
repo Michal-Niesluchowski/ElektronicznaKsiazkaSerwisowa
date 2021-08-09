@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace EKS.FullClient.Services.EventAggregatorService
+namespace EKS.FullClient.Framework.Events
 {
     // Used for navigation - sends new page to main window to be displayed in frame
     class PageChangedEvent : PubSubEvent<Page>
