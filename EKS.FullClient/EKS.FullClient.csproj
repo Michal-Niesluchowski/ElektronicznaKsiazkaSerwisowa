@@ -72,7 +72,6 @@
     <Compile Include="Framework\Navigation\INavigationService.cs" />
     <Compile Include="Framework\Navigation\NavigationService.cs" />
     <Compile Include="Framework\RelayCommand.cs" />
-    <Compile Include="Framework\Events\NewCarEvent.cs" />
     <Compile Include="Framework\Events\ControlChangedEvent.cs" />
     <Compile Include="Framework\Ioc\IocKernel.cs" />
     <Compile Include="Framework\TempData\ITempDataService.cs" />

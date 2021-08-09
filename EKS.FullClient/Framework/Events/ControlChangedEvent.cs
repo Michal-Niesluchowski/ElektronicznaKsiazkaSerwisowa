@@ -9,7 +9,7 @@ using System.Windows.Controls;
 
 namespace EKS.FullClient.Framework.Events
 {
-    // Element of EventAggregator pattern. Used for navigation between user controls
+    // Element of EventAggregator pattern from Prism. Used for navigation between user controls
     public class ControlChangedEvent : PubSubEvent<UserControl>
     {
     }

@@ -22,7 +22,7 @@ namespace EKS.FullClient
             IocKernel.Initialize(new IocConfiguration());
 
             //Beware that there is static class IocKernel
-            //It provides ioc functionality across application
+            //which provides ioc functionality across application
 
             base.OnStartup(e);
         }
