@@ -1,4 +1,4 @@
-﻿using EKS.FullClient.Framework.Events;
+﻿using EKS.FullClient.Services.EventAggregatorService;
 using EKS.FullClient.Views;
 using Prism.Events;
 using Prism.Mvvm;

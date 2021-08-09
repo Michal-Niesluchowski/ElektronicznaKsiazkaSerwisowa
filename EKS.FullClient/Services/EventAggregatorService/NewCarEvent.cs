@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EKS.FullClient.Framework.Events
+namespace EKS.FullClient.Services.EventAggregatorService
 {
     // Used to store new car data 
     class NewCarEvent : PubSubEvent<Car>

@@ -1,4 +1,5 @@
-﻿using EKS.FullClient.ViewModels;
+﻿using EKS.FullClient.Services.EventAggregatorService;
+using EKS.FullClient.ViewModels;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,8 @@ namespace EKS.FullClient.Views
     
     public partial class MainWindow : Window
     {   
-        public MainWindow(MainWindowViewModel viewModel)
+        public MainWindow()
         {
-            DataContext = viewModel;
             InitializeComponent();
         }
     }

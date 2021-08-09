@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Elektroniczna Książka Serwisowa" Height="576" Width="1024"
         Style="{StaticResource CarInBackground}"
-        DataContext="{Binding HomePageViewModel}">
+        DataContext="{Binding HomePageViewModel, Source={StaticResource BaseViewModel}}">
 
     <Grid>
         

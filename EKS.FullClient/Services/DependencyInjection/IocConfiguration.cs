@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EKS.FullClient.Framework.Ioc
+namespace EKS.FullClient.Services.DependencyInjection
 {
     internal class IocConfiguration : NinjectModule
     {

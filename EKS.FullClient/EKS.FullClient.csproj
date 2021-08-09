@@ -70,11 +70,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Framework\Events\NewCarEvent.cs" />
-    <Compile Include="Framework\Events\PageChangedEvent.cs" />
-    <Compile Include="Framework\Ioc\IocConfiguration.cs" />
-    <Compile Include="Framework\Other\RelayCommand.cs" />
-    <Compile Include="Framework\Other\BaseViewModel.cs" />
+    <Compile Include="DAL\Entities\CarEntity.cs" />
+    <Compile Include="DAL\Entities\RepairEntity.cs" />
+    <Compile Include="DAL\Repositories\XMLRepository.cs" />
+    <Compile Include="Services\DependencyInjection\IocConfiguration.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\Repair.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="Services\EventAggregatorService\NewCarEvent.cs" />
+    <Compile Include="Services\EventAggregatorService\PageChangedEvent.cs" />
+    <Compile Include="Services\DependencyInjection\IocKernel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\NewCarViewModel.cs" />
@@ -131,12 +137,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EKS.BackEnd\EKS.BackEnd.csproj">
-      <Project>{5acdf7a0-d090-4974-839f-65fae7dcadd0}</Project>
-      <Name>EKS.BackEnd</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="LogoIcon.ico" />
   </ItemGroup>

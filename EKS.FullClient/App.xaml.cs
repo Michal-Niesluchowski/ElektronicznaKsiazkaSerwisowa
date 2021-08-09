@@ -1,5 +1,4 @@
-﻿using EKS.FullClient.Framework.Ioc;
-using EKS.FullClient.ViewModels;
+﻿using EKS.FullClient.Services.DependencyInjection;
 using EKS.FullClient.Views;
 using Ninject;
 using Prism.Events;
@@ -18,21 +17,11 @@ namespace EKS.FullClient
     /// </summary>
     public partial class App : Application
     {
-        private IKernel _iocKernel;
-
         protected override void OnStartup(StartupEventArgs e)
         {
+            IocKernel.Initialize(new IocConfiguration());
+
             base.OnStartup(e);
-
-            _iocKernel = new StandardKernel();
-
-            _iocKernel.Bind<IEventAggregator>().To<EventAggregator>().InSingletonScope();
-            _iocKernel.Bind<MainWindowViewModel>().ToSelf().InTransientScope();
-            _iocKernel.Bind<HomePageViewModel>().ToSelf().InTransientScope();
-            _iocKernel.Bind<NewCarViewModel>().ToSelf().InTransientScope();
-
-            Current.MainWindow = _iocKernel.Get<MainWindow>();
-            Current.MainWindow.Show();
         }
     }
 }
