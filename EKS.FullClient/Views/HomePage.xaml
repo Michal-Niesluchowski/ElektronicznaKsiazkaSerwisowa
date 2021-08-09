@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:EKS.FullClient.Views"
         mc:Ignorable="d"
         Title="Elektroniczna Książka Serwisowa" Height="576" Width="1024"
-        Style="{StaticResource CarInBackground}">
+        Style="{StaticResource CarInBackground}"
+        DataContext="{Binding HomePageViewModel, Source={StaticResource BaseViewModel}}">
 
     <Grid>
         

@@ -1,4 +1,5 @@
-﻿using EKS.FullClient.Views;
+﻿using EKS.FullClient.Services.DependencyInjection;
+using EKS.FullClient.Views;
 using Ninject;
 using Prism.Events;
 using System;
@@ -16,5 +17,11 @@ namespace EKS.FullClient
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            IocKernel.Initialize(new IocConfiguration());
+
+            base.OnStartup(e);
+        }
     }
 }

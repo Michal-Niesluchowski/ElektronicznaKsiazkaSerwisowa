@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EKS.FullClient.Services.EventAggregatorService
 {
     // Used to store new car data 
-    public class NewCarEvent : PubSubEvent<Car>
+    class NewCarEvent : PubSubEvent<Car>
     {
     }
 }

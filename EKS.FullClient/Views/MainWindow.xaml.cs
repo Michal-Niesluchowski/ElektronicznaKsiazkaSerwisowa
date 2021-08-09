@@ -22,16 +22,10 @@ namespace EKS.FullClient.Views
     /// </summary>
     
     public partial class MainWindow : Window
-    {
-        private MainWindowViewModel _viewModel;
-        
+    {   
         public MainWindow()
         {
             InitializeComponent();
-
-            _viewModel = new MainWindowViewModel(EventAggregatorService.GetInstance, new HomePage());
-
-            DataContext = _viewModel;
         }
     }
 }
