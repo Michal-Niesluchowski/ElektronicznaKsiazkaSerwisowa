@@ -21,10 +21,16 @@ namespace EKS.FullClient.Views
     /// Interaction logic for HomePage.xaml
     /// </summary>
     public partial class HomePage : Page
-    {   
+    {
+        private HomePageViewModel _viewModel;
+        
         public HomePage()
         {
             InitializeComponent();
+
+            _viewModel = new HomePageViewModel(EventAggregatorService.GetInstance);
+
+            DataContext = _viewModel;
         }
     }
 }

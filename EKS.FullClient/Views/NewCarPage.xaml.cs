@@ -21,9 +21,15 @@ namespace EKS.FullClient.Views
     /// </summary>
     public partial class NewCarPage : Page
     {
+        private NewCarViewModel _viewModel;
+
         public NewCarPage()
         {
             InitializeComponent();
+
+            _viewModel = new NewCarViewModel(EventAggregatorService.GetInstance);
+
+            DataContext = _viewModel;
         }
     }
 }

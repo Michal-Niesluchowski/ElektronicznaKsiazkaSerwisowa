@@ -4,10 +4,8 @@
              xmlns:local="clr-namespace:EKS.FullClient"
              xmlns:VM="clr-namespace:EKS.FullClient.ViewModels"
              StartupUri="Views/MainWindow.xaml">
-    
-    <Application.Resources>
 
-        <VM:BaseViewModel x:Key="BaseViewModel"/>
+    <Application.Resources>
 
         <!--Default button style-->
         <Style TargetType="Button">

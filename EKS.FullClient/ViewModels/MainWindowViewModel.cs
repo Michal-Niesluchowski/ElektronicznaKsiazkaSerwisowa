@@ -14,13 +14,13 @@ namespace EKS.FullClient.ViewModels
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         #region fields
-        private Page _currentPage;
+        private Page _currentPage = new HomePage();
         #endregion
 
         #region constructors
-        public MainWindowViewModel(IEventAggregator eventAggregator)
+        public MainWindowViewModel(IEventAggregator eventAggregator, Page homePage)
         {
-            CurrentPage = new HomePage();
+            CurrentPage = homePage;
             eventAggregator.GetEvent<PageChangedEvent>().Subscribe(UpdateCurrentPage);
         }
 

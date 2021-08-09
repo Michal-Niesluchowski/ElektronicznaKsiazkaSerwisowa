@@ -9,7 +9,7 @@ using System.Windows.Controls;
 namespace EKS.FullClient.Services.EventAggregatorService
 {
     // Used for navigation - sends new page to main window to be displayed in frame
-    class PageChangedEvent : PubSubEvent<Page>
+    public class PageChangedEvent : PubSubEvent<Page>
     {
     }
 }
