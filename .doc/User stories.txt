@@ -1,1 +1,3 @@
 001. As a user, I want to add new car, so I can start to use application.
+002. As a user, I want to see list of rapairs of my car, 
+	so I can review what repairs were done in my car.

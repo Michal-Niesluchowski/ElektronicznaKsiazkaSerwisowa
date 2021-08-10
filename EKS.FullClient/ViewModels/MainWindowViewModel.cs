@@ -21,6 +21,7 @@ namespace EKS.FullClient.ViewModels
         {
             navigationService.ControlChange += new EventHandler<UserControl>(UpdateCurrentControl);
             navigationService.NavigateToControl(ControlsRegister.HomeControl);
+            //navigationService.NavigateToControl(ControlsRegister.CarMainScreenControl);
         }
         #endregion
 

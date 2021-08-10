@@ -7,29 +7,46 @@
              mc:Ignorable="d" 
              d:DesignHeight="576" d:DesignWidth="1024"
              DataContext="{Binding  CarMainScreenViewModel, Source={StaticResource ViewModelLocator}}">
-    
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-        
-        <!--Grid definition-->
+
+    <Grid>
+
+        <!--Main Grid definition-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
         </Grid.ColumnDefinitions>
-        
-        <!--Information about car-->
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="UNDER CONSTRUCTION"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Car name:"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Car plate:"/>
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Car description:"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Car.Name}"/>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Car.Plate}"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Car.Description}"/>
-    
+
+        <!--Car information region-->
+        <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource LightGreenGrid}">
+
+            <!--Car information grid definition-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Car information content -->
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource Title}" Margin="10,5,5,0" Text="Nazwa auta:"/>
+                <TextBlock Style="{StaticResource JustText}" Margin="0,5,0,0" Text="{Binding Car.Name}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource Title}" Margin="10,5,5,0" Text="Tablica rejestracyjna:"/>
+                <TextBlock Style="{StaticResource JustText}" Margin="0,5,0,0" Text="{Binding Car.Plate}"/>
+            </StackPanel>
+        </Grid>
+
+        <!--Buttons region-->
+        <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource LightGreenGrid}">
+
+        </Grid>
     </Grid>
 </UserControl>

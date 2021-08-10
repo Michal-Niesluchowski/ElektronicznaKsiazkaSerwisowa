@@ -39,19 +39,36 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
 
-        <!--Custom page background with car-->
+        <!--Custom textblock style for titles in region -->
+        <Style x:Key="Title" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+        </Style>
+
+        <!--Custom textblock style for text in region -->
+        <Style x:Key="JustText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <!--Custom User Control background with car-->
         <Style x:Key="CarInBackground" TargetType="UserControl">
             <Setter Property="Background">
                 <Setter.Value>
                     <ImageBrush ImageSource="/images/BackgroundStart.jpg"/>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Background">
-                <Setter.Value>
-                    <ImageBrush ImageSource="/images/BackgroundStart.jpg"/>
-                </Setter.Value>
-            </Setter>
         </Style>
-        
+
+        <!--Custom Grid style with light green-->
+        <Style x:Key="LightGreenGrid" TargetType="Grid">
+            <Setter Property="Background" Value="#ECEABE"/>
+        </Style>
+
     </Application.Resources>
 </Application>
