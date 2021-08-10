@@ -1,9 +1,7 @@
 ﻿using EKS.FullClient.Framework.Navigation;
-using EKS.FullClient.Framework.Events;
 using EKS.FullClient.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Prism.Events;
 using System;
 using System.Windows.Controls;
 
@@ -16,16 +14,15 @@ namespace EKS.FullClient.Test.ViewModelsTest
         public void ConstructorTest()
         {
             //Arrange
-            var mockEventAggregator = new Mock<EventAggregator>();
             var mockNavigationService = new Mock<INavigationService>();
             mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.HomeControl));
 
             //Act
-            MainWindowViewModel viewModel = new MainWindowViewModel(
-                mockEventAggregator.Object, mockNavigationService.Object);
+            MainWindowViewModel viewModel = new MainWindowViewModel(mockNavigationService.Object);
             
             //Assert
             mockNavigationService.Verify(ns => ns.NavigateToControl(ControlsRegister.HomeControl), Times.Once);
+            mockNavigationService.VerifyAdd(ns => ns.ControlChange += It.IsAny<EventHandler<UserControl>>(), Times.Once);
         }
 
         [TestMethod]
@@ -33,14 +30,13 @@ namespace EKS.FullClient.Test.ViewModelsTest
         {
             //Arrange
             var expected = new Mock<UserControl>().Object;
-            var mockEventAggregator = new Mock<EventAggregator>().Object;
             var mockNavigationServie = new Mock<INavigationService>().Object;
             
-            MainWindowViewModel viewModel = new MainWindowViewModel(mockEventAggregator, mockNavigationServie);
+            MainWindowViewModel viewModel = new MainWindowViewModel(mockNavigationServie);
 
             //Act
             PrivateObject privateViewModel = new PrivateObject(viewModel);
-            privateViewModel.Invoke("UpdateCurrentControl", expected);
+            privateViewModel.Invoke("UpdateCurrentControl", null, expected);
 
             //Assert
             Assert.AreEqual(expected, viewModel.CurrentControl);

@@ -2,7 +2,6 @@
 using EKS.FullClient.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Prism.Events;
 using System;
 using System.Windows.Input;
 
