@@ -1,7 +1,6 @@
 ﻿using EKS.FullClient.Framework.Ioc;
 using EKS.FullClient.Views;
 using Ninject;
-using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
