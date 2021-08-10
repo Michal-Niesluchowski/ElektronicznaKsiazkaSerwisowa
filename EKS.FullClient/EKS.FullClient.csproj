@@ -41,9 +41,6 @@
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
-    <Reference Include="Prism, Version=8.1.97.5141, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
-      <HintPath>..\packages\Prism.Core.8.1.97\lib\net47\Prism.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -72,7 +69,6 @@
     <Compile Include="Framework\Navigation\INavigationService.cs" />
     <Compile Include="Framework\Navigation\NavigationService.cs" />
     <Compile Include="Framework\RelayCommand.cs" />
-    <Compile Include="Framework\Events\ControlChangedEvent.cs" />
     <Compile Include="Framework\Ioc\IocKernel.cs" />
     <Compile Include="Framework\TempData\ITempDataService.cs" />
     <Compile Include="Framework\TempData\TempDataService.cs" />

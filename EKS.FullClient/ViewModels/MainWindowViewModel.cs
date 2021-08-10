@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows.Controls;
-using Prism.Events;
-using EKS.FullClient.Framework.Events;
 using System.Windows;
 using EKS.FullClient.Framework.Navigation;
 
@@ -19,9 +17,9 @@ namespace EKS.FullClient.ViewModels
         #endregion
 
         #region constructors
-        public MainWindowViewModel(IEventAggregator eventAggregator, INavigationService navigationService)
+        public MainWindowViewModel(INavigationService navigationService)
         {
-            eventAggregator.GetEvent<ControlChangedEvent>().Subscribe(UpdateCurrentControl);
+            navigationService.ControlChange += new EventHandler<UserControl>(UpdateCurrentControl);
             navigationService.NavigateToControl(ControlsRegister.HomeControl);
         }
         #endregion
@@ -53,9 +51,9 @@ namespace EKS.FullClient.ViewModels
         #endregion
 
         #region methods
-        private void UpdateCurrentControl(UserControl newControl)
+        private void UpdateCurrentControl(object sender, UserControl userControl)
         {
-            CurrentControl = newControl;
+            CurrentControl = userControl;
         }
         #endregion
     }

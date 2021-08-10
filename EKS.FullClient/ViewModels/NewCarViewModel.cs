@@ -1,7 +1,6 @@
 ﻿using EKS.BackEnd.Models;
 using EKS.FullClient.Framework.Navigation;
 using EKS.FullClient.Framework;
-using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

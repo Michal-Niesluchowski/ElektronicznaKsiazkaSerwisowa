@@ -2,7 +2,6 @@
 using EKS.FullClient.Framework.TempData;
 using EKS.FullClient.ViewModels;
 using Ninject.Modules;
-using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +15,6 @@ namespace EKS.FullClient.Framework.Ioc
         public override void Load()
         {
             //Services
-            Bind<IEventAggregator>().To<EventAggregator>().InSingletonScope();
             Bind<INavigationService>().To<NavigationService>().InSingletonScope();
             Bind<ITempDataService>().To<TempDataService>().InSingletonScope();
 
