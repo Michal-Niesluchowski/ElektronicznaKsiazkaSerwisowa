@@ -9,7 +9,8 @@
         SizeToContent="WidthAndHeight"
         MinHeight="576" MinWidth="1024"
         DataContext="{Binding MainWindowViewModel, Source={StaticResource ViewModelLocator}}">
- 
+    
+    <!--Place holder for User Control-->
     <ContentControl Content="{Binding CurrentControl}"/>
     
 </Window>
