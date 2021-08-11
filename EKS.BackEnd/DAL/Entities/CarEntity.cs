@@ -10,7 +10,6 @@ namespace EKS.BackEnd.DAL.Entities
     {
         public string Name { get; set; }
         public string Plate { get; set; }
-        public string Description { get; set; }
         public List<RepairEntity> Repairs { get; set; }
     }
 }

@@ -10,20 +10,18 @@ namespace EKS.BackEnd.Models
     {
         public string Name { get; private set; }
         public string Plate { get; private set; }
-        public string Description { get; private set; }
         public List<Repair> Repairs { get; private set; }
 
-        public Car(string name, string plate, string description)
+        public Car(string name, string plate)
         {
             this.Name = name;
             this.Plate = plate;
-            this.Description = description;
             this.Repairs = new List<Repair>();
         }
 
         public override string ToString()
         {
-            return Name + Plate + Description;
+            return Name + Plate;
         }
 
         public override bool Equals(object obj)
@@ -36,8 +34,12 @@ namespace EKS.BackEnd.Models
             }
 
             return this.Name == other.Name &&
-                   this.Plate == other.Plate &&
-                   this.Description == other.Description;
+                   this.Plate == other.Plate;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

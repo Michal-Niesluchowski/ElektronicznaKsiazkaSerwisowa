@@ -18,7 +18,6 @@ namespace EKS.FullClient.ViewModels
         #region fields
         private string _carName = "...";
         private string _carPlate = "...";
-        private string _carDescription = "...";
         private INavigationService _navigationService;
         private ITempDataService _tempDataService;
         #endregion
@@ -62,12 +61,6 @@ namespace EKS.FullClient.ViewModels
             set { _carPlate = value; }
         }
 
-        public string CarDescription
-        {
-            get { return _carDescription; }
-            set { _carDescription = value; }
-        }
-
         public ICommand NewCarCommand { get; private set; }
 
         public ICommand CancelCommand { get; private set; }
@@ -76,7 +69,7 @@ namespace EKS.FullClient.ViewModels
         #region methods
         private void CreateNewCar()
         {
-            Car newCar = new Car(CarName, CarPlate, CarDescription);
+            Car newCar = new Car(CarName, CarPlate);
             _tempDataService.SaveCar(newCar);
             _navigationService.NavigateToControl(ControlsRegister.CarMainScreenControl);
         }
@@ -89,11 +82,6 @@ namespace EKS.FullClient.ViewModels
             };
 
             if (CarName == "..." || String.IsNullOrWhiteSpace(CarName))
-            {
-                return false;
-            };
-
-            if (CarDescription == "..." || String.IsNullOrWhiteSpace(CarDescription))
             {
                 return false;
             };

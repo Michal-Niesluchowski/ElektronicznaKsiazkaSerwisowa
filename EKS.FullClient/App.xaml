@@ -45,6 +45,7 @@
             <Setter Property="FontFamily" Value="Calibri"/>
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="TextWrapping" Value="NoWrap"/>
         </Style>
 
@@ -53,7 +54,8 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Calibri"/>
             <Setter Property="FontSize" Value="17"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
         </Style>
 
         <!--Custom User Control background with car-->
@@ -68,6 +70,7 @@
         <!--Custom Grid style with light green-->
         <Style x:Key="LightGreenGrid" TargetType="Grid">
             <Setter Property="Background" Value="#ECEABE"/>
+            <Setter Property="Opacity" Value="0.7"/>
         </Style>
 
     </Application.Resources>

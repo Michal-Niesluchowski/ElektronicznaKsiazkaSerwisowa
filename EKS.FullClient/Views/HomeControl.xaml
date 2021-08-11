@@ -16,7 +16,6 @@
             <RowDefinition Height="50*"></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
-            <RowDefinition Height="60" ></RowDefinition>
             <RowDefinition Height="50*" MinHeight="50"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -25,7 +24,7 @@
                     VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button Content="Dodaj auto" Margin="0,0,10,0" Width="200" Height="50"
                     Command="{Binding GoToNewCarControlCommand}"/>
-            <Button Content="Otwórz auto z dysku" Width="200" Height="50"/>
+            <Button Content="Otwórz auto z dysku" Margin="10,0,0,0" Width="200" Height="50"/>
         </StackPanel>
     </Grid>
     

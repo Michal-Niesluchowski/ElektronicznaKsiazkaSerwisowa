@@ -29,7 +29,6 @@ namespace EKS.FullClient.Test.ViewModelsTest
             Assert.AreSame(tempDataService, privateViewModel.GetField("_tempDataService"));
             Assert.AreEqual("...", privateViewModel.GetField("_carName"));
             Assert.AreEqual("...", privateViewModel.GetField("_carPlate"));
-            Assert.AreEqual("...", privateViewModel.GetField("_carDescription"));
         }
         
         [TestMethod]
@@ -40,7 +39,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.CarMainScreenControl));
             
             var mockTempDataService = new Mock<ITempDataService>();
-            Car newCar = new Car("...", "...", "...");
+            Car newCar = new Car("...", "...");
             mockTempDataService.Setup(tds => tds.SaveCar(newCar));
 
             NewCarViewModel viewModel = new NewCarViewModel(mockNavigationService.Object, 
@@ -107,7 +106,6 @@ namespace EKS.FullClient.Test.ViewModelsTest
             //Act
             viewModel.CarName = "Not empty";
             viewModel.CarPlate = "Not empty";
-            viewModel.CarDescription = "Not empty";
             PrivateObject privateViewModel = new PrivateObject(viewModel);
             bool actual = (bool)privateViewModel.Invoke("CanCreateNewCar");
 

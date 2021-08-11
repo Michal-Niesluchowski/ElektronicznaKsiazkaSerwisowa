@@ -6,24 +6,24 @@
              xmlns:local="clr-namespace:EKS.FullClient.Views"
              mc:Ignorable="d" 
              d:DesignHeight="576" d:DesignWidth="1024"
+             Style="{StaticResource CarInBackground}"
              DataContext="{Binding  CarMainScreenViewModel, Source={StaticResource ViewModelLocator}}">
 
     <Grid>
-
-        <!--Main Grid definition-->
+        
+        <!--Main grid-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <!--Car information region-->
+        <!--Car information-->
         <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource LightGreenGrid}">
 
-            <!--Car information grid definition-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -31,22 +31,38 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <!--Car information content -->
-            <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <TextBlock Style="{StaticResource Title}" Margin="10,5,5,0" Text="Nazwa auta:"/>
-                <TextBlock Style="{StaticResource JustText}" Margin="0,5,0,0" Text="{Binding Car.Name}"/>
-            </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <TextBlock Style="{StaticResource Title}" Margin="10,5,5,0" Text="Tablica rejestracyjna:"/>
-                <TextBlock Style="{StaticResource JustText}" Margin="0,5,0,0" Text="{Binding Car.Plate}"/>
-            </StackPanel>
+            <TextBlock Grid.Row="0" Margin="5,5,5,0" Style="{StaticResource Title}" 
+                       Text="Nazwa auta"/>
+            <TextBlock Grid.Row="1" Margin="5,0,5,5" Style="{StaticResource JustText}"  
+                       Text="{Binding Car.Name}"/>
+            <TextBlock Grid.Row="2" Margin="5,0,5,0" Style="{StaticResource Title}" 
+                       Text="Tablica rejestracyjna"/>
+            <TextBlock Grid.Row="3" Margin="5,0,5,5" Style="{StaticResource JustText}" 
+                       Text="{Binding Car.Plate}"/>
+            
         </Grid>
 
-        <!--Buttons region-->
-        <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource LightGreenGrid}">
+        <!--Buttons-->
+        <Grid Grid.Row="1" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Top">
 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="0" Content="Dodaj naprawę" Margin="0,10,10,0" Width="200" Height="50"/>
+            <Button Grid.Row="1" Content="Zapisz" Margin="0,10,10,0" Width="200" Height="50"/>
+            <Button Grid.Row="2" Content="Edytuja dane samochodu" Margin="0,10,10,0" Width="200" Height="50"/>
+            
+        
         </Grid>
     </Grid>
 </UserControl>
