@@ -21,7 +21,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             ITempDataService tempDataService = mockTempDataService.Object;
 
             //Act
-            NewCarViewModel viewModel = new NewCarViewModel(navigationService, tempDataService);
+            NewCarControlVM viewModel = new NewCarControlVM(navigationService, tempDataService);
             PrivateObject privateViewModel = new PrivateObject(viewModel);
 
             //Assert
@@ -42,7 +42,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             Car newCar = new Car("...", "...");
             mockTempDataService.Setup(tds => tds.SaveCar(newCar));
 
-            NewCarViewModel viewModel = new NewCarViewModel(mockNavigationService.Object, 
+            NewCarControlVM viewModel = new NewCarControlVM(mockNavigationService.Object, 
                 mockTempDataService.Object);
 
             //Act
@@ -64,7 +64,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
 
             var mockTempDataService = new Mock<ITempDataService>();
 
-            NewCarViewModel viewModel = new NewCarViewModel(mockNavigationService.Object,
+            NewCarControlVM viewModel = new NewCarControlVM(mockNavigationService.Object,
                 mockTempDataService.Object);
 
             //Act
@@ -82,7 +82,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             var mockNavigationService = new Mock<INavigationService>();
             var mockTempDataService = new Mock<ITempDataService>();
 
-            NewCarViewModel viewModel = new NewCarViewModel(mockNavigationService.Object,
+            NewCarControlVM viewModel = new NewCarControlVM(mockNavigationService.Object,
                 mockTempDataService.Object);
 
             //Act
@@ -100,7 +100,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             var mockNavigationService = new Mock<INavigationService>();
             var mockTempDataService = new Mock<ITempDataService>();
 
-            NewCarViewModel viewModel = new NewCarViewModel(mockNavigationService.Object,
+            NewCarControlVM viewModel = new NewCarControlVM(mockNavigationService.Object,
                 mockTempDataService.Object);
 
             //Act

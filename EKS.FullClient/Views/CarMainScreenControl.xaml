@@ -6,19 +6,19 @@
              xmlns:local="clr-namespace:EKS.FullClient.Views"
              mc:Ignorable="d" 
              d:DesignHeight="576" d:DesignWidth="1024"
-             Style="{StaticResource CarInBackground}"
-             DataContext="{Binding  CarMainScreenViewModel, Source={StaticResource ViewModelLocator}}">
+             d:DesignStyle="{StaticResource CarInBackground}"
+             DataContext="{Binding CarMainScreenViewModel, Source={StaticResource ViewModelLocator}}">
 
+    <!--Main grid-->
     <Grid>
         
-        <!--Main grid-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" x:Name="SecondMainColumn"/>
         </Grid.ColumnDefinitions>
 
         <!--Car information-->
@@ -37,11 +37,11 @@
             <TextBlock Grid.Row="0" Margin="5,5,5,0" Style="{StaticResource Title}" 
                        Text="Nazwa auta"/>
             <TextBlock Grid.Row="1" Margin="5,0,5,5" Style="{StaticResource JustText}"  
-                       Text="{Binding Car.Name}"/>
+                       Text="{Binding CurrentCar.Name}"/>
             <TextBlock Grid.Row="2" Margin="5,0,5,0" Style="{StaticResource Title}" 
                        Text="Tablica rejestracyjna"/>
             <TextBlock Grid.Row="3" Margin="5,0,5,5" Style="{StaticResource JustText}" 
-                       Text="{Binding Car.Plate}"/>
+                       Text="{Binding CurrentCar.Plate}"/>
             
         </Grid>
 
@@ -49,7 +49,7 @@
         <Grid Grid.Row="1" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Top">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" x:Name="CarButtonsColumn"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -57,12 +57,25 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
-            <Button Grid.Row="0" Content="Dodaj naprawę" Margin="0,10,10,0" Width="200" Height="50"/>
-            <Button Grid.Row="1" Content="Zapisz" Margin="0,10,10,0" Width="200" Height="50"/>
-            <Button Grid.Row="2" Content="Edytuja dane samochodu" Margin="0,10,10,0" Width="200" Height="50"/>
             
+            <Button Grid.Row="0" Content="Dodaj naprawę" Margin="0,10,10,0" Width="200" Height="50"/>
+            <Button Grid.Row="1" Content="Edytuja dane samochodu" Margin="0,10,10,0" Width="200" Height="50"/>
+            <Button Grid.Row="2" Content="Zapisz" Margin="0,10,10,0" Width="200" Height="50"/>
+            <Button Grid.Row="3" Content="Wróć do menu" Margin="0,10,10,0" Width="200" Height="50"
+                    Command="{Binding BackToMenuCommand}"/>
         
         </Grid>
+        
+        <!--Table with repairs-->
+        <DataGrid Grid.Column="1" 
+                  Grid.RowSpan="2" 
+                  Margin="15,0,0,0" 
+                  Opacity="0.7" 
+                  BorderThickness="0"
+                  AutoGenerateColumns="True"
+                  CanUserAddRows="False"
+                  ItemsSource="{Binding CurrentCar.Repairs}">
+        </DataGrid>
+        
     </Grid>
 </UserControl>

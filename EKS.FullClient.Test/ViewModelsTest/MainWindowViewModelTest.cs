@@ -18,7 +18,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.HomeControl));
 
             //Act
-            MainWindowViewModel viewModel = new MainWindowViewModel(mockNavigationService.Object);
+            MainWindowVM viewModel = new MainWindowVM(mockNavigationService.Object);
             
             //Assert
             mockNavigationService.Verify(ns => ns.NavigateToControl(ControlsRegister.HomeControl), Times.Once);
@@ -32,7 +32,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             var expected = new Mock<UserControl>().Object;
             var mockNavigationServie = new Mock<INavigationService>().Object;
             
-            MainWindowViewModel viewModel = new MainWindowViewModel(mockNavigationServie);
+            MainWindowVM viewModel = new MainWindowVM(mockNavigationServie);
 
             //Act
             PrivateObject privateViewModel = new PrivateObject(viewModel);

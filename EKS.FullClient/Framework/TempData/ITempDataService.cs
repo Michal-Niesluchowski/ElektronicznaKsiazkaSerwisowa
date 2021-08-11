@@ -12,5 +12,7 @@ namespace EKS.FullClient.Framework.TempData
         void SaveCar(Car newCar);
 
         Car LoadCar();
+
+        void SaveTestCar();
     }
 }

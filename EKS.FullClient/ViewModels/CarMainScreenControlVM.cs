@@ -1,4 +1,5 @@
 ﻿using EKS.BackEnd.Models;
+using EKS.FullClient.Framework;
 using EKS.FullClient.Framework.Navigation;
 using EKS.FullClient.Framework.TempData;
 using System;
@@ -7,24 +8,29 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace EKS.FullClient.ViewModels
 {
-    class CarMainScreenViewModel : INotifyPropertyChanged
+    class CarMainScreenControlVM : INotifyPropertyChanged
     {
         #region fields
-        private Car _car;
+        private Car _currentCar;
         private INavigationService _navigationService;
         private ITempDataService _tempDataService;
         #endregion
 
         #region constructors
-        public CarMainScreenViewModel(INavigationService navigationService, ITempDataService tempDataService)
+        public CarMainScreenControlVM(INavigationService navigationService, ITempDataService tempDataService)
         {
             _navigationService = navigationService;
             _tempDataService = tempDataService;
 
-            Car = _tempDataService.LoadCar();
+            _tempDataService.SaveTestCar();
+            this.CurrentCar = _tempDataService.LoadCar();
+
+            this.BackToMenuCommand = new RelayCommand(
+                action => GoToMenu());
         }
         #endregion
 
@@ -40,17 +46,26 @@ namespace EKS.FullClient.ViewModels
         #endregion
 
         #region properties
-        public Car Car
+        public Car CurrentCar
         {
             get
             {
-                return _car;
+                return _currentCar;
             }
             set
             {
-                _car = value;
+                _currentCar = value;
                 OnPropertyChanged();
             }
+        }
+
+        public ICommand BackToMenuCommand { get; private set; }
+        #endregion
+
+        #region methods
+        private void GoToMenu()
+        {
+            _navigationService.NavigateToControl(ControlsRegister.HomeControl);
         }
         #endregion
     }

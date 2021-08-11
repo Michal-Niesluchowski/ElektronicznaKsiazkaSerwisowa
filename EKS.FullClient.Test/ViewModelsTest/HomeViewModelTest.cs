@@ -18,7 +18,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             INavigationService navigationService = mockNavigationService.Object;
 
             //Act
-            HomeViewModel viewModel = new HomeViewModel(navigationService);
+            HomeControlVM viewModel = new HomeControlVM(navigationService);
             PrivateObject privateViewModel = new PrivateObject(viewModel);
 
             //Assert
@@ -32,7 +32,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             var mockNavigationService = new Mock<INavigationService>();
             mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.NewCarControl));
             INavigationService navigationService = mockNavigationService.Object;
-            HomeViewModel viewModel = new HomeViewModel(navigationService);
+            HomeControlVM viewModel = new HomeControlVM(navigationService);
 
             //Act
             viewModel.GoToNewCarControlCommand.Execute(null);

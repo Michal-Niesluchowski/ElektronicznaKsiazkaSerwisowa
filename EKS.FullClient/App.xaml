@@ -67,8 +67,14 @@
             </Setter>
         </Style>
 
-        <!--Custom Grid style with light green-->
+        <!--Custom Grid cell style with light green-->
         <Style x:Key="LightGreenGrid" TargetType="Grid">
+            <Setter Property="Background" Value="#ECEABE"/>
+            <Setter Property="Opacity" Value="0.7"/>
+        </Style>
+
+        <!--Custom DataGrid style form main table-->
+        <Style x:Key="MainTable" TargetType="Grid">
             <Setter Property="Background" Value="#ECEABE"/>
             <Setter Property="Opacity" Value="0.7"/>
         </Style>

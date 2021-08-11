@@ -8,16 +8,29 @@ namespace EKS.BackEnd.Models
 {
     public class Car
     {
+        #region fields
         public string Name { get; private set; }
         public string Plate { get; private set; }
         public List<Repair> Repairs { get; private set; }
+        #endregion
 
+        #region constructors
         public Car(string name, string plate)
         {
             this.Name = name;
             this.Plate = plate;
             this.Repairs = new List<Repair>();
         }
+        #endregion
+
+        #region methods
+        public void AddRepair(DateTime date, string title, string description, decimal cost, string workshopName)
+        {
+            Repair newRepair = new Repair(date, title, description, cost, workshopName);
+            this.Repairs.Add(newRepair);
+        }
+
+        public string WorkshopName { get; private set; }
 
         public override string ToString()
         {
@@ -41,5 +54,6 @@ namespace EKS.BackEnd.Models
         {
             return base.GetHashCode();
         }
+        #endregion
     }
 }

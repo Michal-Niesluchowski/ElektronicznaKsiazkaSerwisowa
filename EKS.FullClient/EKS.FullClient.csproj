@@ -73,10 +73,10 @@
     <Compile Include="Framework\TempData\ITempDataService.cs" />
     <Compile Include="Framework\TempData\TempDataService.cs" />
     <Compile Include="Framework\ViewModelLocator.cs" />
-    <Compile Include="ViewModels\CarMainScreenViewModel.cs" />
-    <Compile Include="ViewModels\HomeViewModel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\NewCarViewModel.cs" />
+    <Compile Include="ViewModels\CarMainScreenControlVM.cs" />
+    <Compile Include="ViewModels\HomeControlVM.cs" />
+    <Compile Include="ViewModels\MainWindowVM.cs" />
+    <Compile Include="ViewModels\NewCarControlVM.cs" />
     <Compile Include="Views\CarMainScreenControl.xaml.cs">
       <DependentUpon>CarMainScreenControl.xaml</DependentUpon>
     </Compile>

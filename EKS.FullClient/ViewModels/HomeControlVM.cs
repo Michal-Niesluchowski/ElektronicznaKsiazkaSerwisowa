@@ -9,14 +9,14 @@ using System.Windows.Input;
 
 namespace EKS.FullClient.ViewModels
 {
-    public class HomeViewModel 
+    public class HomeControlVM 
     {
         #region fields
         private INavigationService _navigationService;
         #endregion
 
         #region constructors
-        public HomeViewModel(INavigationService navigationService)
+        public HomeControlVM(INavigationService navigationService)
         {
             _navigationService = navigationService;
 

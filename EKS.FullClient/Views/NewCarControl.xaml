@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EKS.FullClient.Views"
         mc:Ignorable="d"
         d:DesignHeight="576" d:DesignWidth="1024"
-        Style="{StaticResource CarInBackground}"
+        d:DesignStyle="{StaticResource CarInBackground}"
         DataContext="{Binding NewCarViewModel, Source={StaticResource ViewModelLocator}}">
     
     <Grid>

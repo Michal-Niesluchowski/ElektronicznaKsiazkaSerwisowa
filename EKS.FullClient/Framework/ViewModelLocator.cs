@@ -10,24 +10,24 @@ namespace EKS.FullClient.Framework
 {
     class ViewModelLocator
     {
-        public MainWindowViewModel MainWindowViewModel
+        public MainWindowVM MainWindowViewModel
         {
-            get { return IocKernel.Get<MainWindowViewModel>(); }
+            get { return IocKernel.Get<MainWindowVM>(); }
         }
 
-        public HomeViewModel HomePageViewModel
+        public HomeControlVM HomePageViewModel
         {
-            get { return IocKernel.Get<HomeViewModel>(); }
+            get { return IocKernel.Get<HomeControlVM>(); }
         }
 
-        public NewCarViewModel NewCarViewModel
+        public NewCarControlVM NewCarViewModel
         {
-            get { return IocKernel.Get<NewCarViewModel>(); }
+            get { return IocKernel.Get<NewCarControlVM>(); }
         }
 
-        public CarMainScreenViewModel CarMainScreenViewModel
+        public CarMainScreenControlVM CarMainScreenViewModel
         {
-            get { return IocKernel.Get<CarMainScreenViewModel>(); }
+            get { return IocKernel.Get<CarMainScreenControlVM>(); }
         }
     }
 }

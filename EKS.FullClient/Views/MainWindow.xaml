@@ -9,6 +9,10 @@
         SizeToContent="WidthAndHeight"
         MinHeight="576" MinWidth="1024" Title="Elektroniczna Książka Serwisowa"
         DataContext="{Binding MainWindowViewModel, Source={StaticResource ViewModelLocator}}">
+    
+    <Window.Background>
+        <ImageBrush ImageSource="/images/BackgroundStart.jpg"/>
+    </Window.Background>
  
     <ContentControl Content="{Binding CurrentControl}"/>
     
