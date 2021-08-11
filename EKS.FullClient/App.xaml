@@ -1,25 +1,28 @@
-﻿<Application x:Class="EKS.FullClient.App"
+﻿<Application
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:EKS.FullClient"
              xmlns:BVM="clr-namespace:EKS.FullClient.Framework"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d" x:Class="EKS.FullClient.App"
              StartupUri="Views/MainWindow.xaml">
-    
+
     <Application.Resources>
 
         <BVM:ViewModelLocator x:Key="ViewModelLocator"/>
 
         <!--Default button style-->
-        <Style TargetType="Button">
+        <Style TargetType="{x:Type Button}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontFamily" Value="Calibri" />
             <Setter Property="FontSize" Value="17" />
             <Setter Property="Background" Value="#F7E0C1"/>
         </Style>
-        
+
         <!--Default label style-->
-        <Style TargetType="Label">
+        <Style TargetType="{x:Type Label}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontFamily" Value="Calibri"/>
@@ -30,7 +33,7 @@
         </Style>
 
         <!--Default textbox style-->
-        <Style TargetType="TextBox">
+        <Style TargetType="{x:Type TextBox}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontFamily" Value="Calibri"/>
@@ -40,7 +43,7 @@
         </Style>
 
         <!--Custom textblock style for titles in region -->
-        <Style x:Key="Title" TargetType="TextBlock">
+        <Style x:Key="Title" TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Calibri"/>
             <Setter Property="FontSize" Value="17"/>
@@ -50,7 +53,7 @@
         </Style>
 
         <!--Custom textblock style for text in region -->
-        <Style x:Key="JustText" TargetType="TextBlock">
+        <Style x:Key="JustText" TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Calibri"/>
             <Setter Property="FontSize" Value="17"/>
@@ -59,7 +62,7 @@
         </Style>
 
         <!--Custom User Control background with car-->
-        <Style x:Key="CarInBackground" TargetType="UserControl">
+        <Style x:Key="CarInBackground" TargetType="{x:Type UserControl}">
             <Setter Property="Background">
                 <Setter.Value>
                     <ImageBrush ImageSource="/images/BackgroundStart.jpg"/>
@@ -68,13 +71,13 @@
         </Style>
 
         <!--Custom Grid cell style with light green-->
-        <Style x:Key="LightGreenGrid" TargetType="Grid">
+        <Style x:Key="LightGreenGrid" TargetType="{x:Type Grid}">
             <Setter Property="Background" Value="#ECEABE"/>
             <Setter Property="Opacity" Value="0.7"/>
         </Style>
 
         <!--Custom DataGrid style form main table-->
-        <Style x:Key="MainTable" TargetType="Grid">
+        <Style x:Key="MainTable" TargetType="{x:Type Grid}">
             <Setter Property="Background" Value="#ECEABE"/>
             <Setter Property="Opacity" Value="0.7"/>
         </Style>

@@ -4,10 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EKS.FullClient.Views"
+             xmlns:localVM="clr-namespace:EKS.FullClient.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="576" d:DesignWidth="1024"
              d:DesignStyle="{StaticResource CarInBackground}"
-             DataContext="{Binding CarMainScreenViewModel, Source={StaticResource ViewModelLocator}}">
+             DataContext="{Binding CarMainScreenViewModel, Source={StaticResource ViewModelLocator}}"
+             d:DataContext="{d:DesignInstance localVM:CarMainScreenControlVM, IsDesignTimeCreatable=True}">
 
     <!--Main grid-->
     <Grid>
@@ -67,15 +69,18 @@
         </Grid>
         
         <!--Table with repairs-->
-        <DataGrid Grid.Column="1" 
-                  Grid.RowSpan="2" 
-                  Margin="15,0,0,0" 
-                  Opacity="0.7" 
-                  BorderThickness="0"
-                  AutoGenerateColumns="True"
-                  CanUserAddRows="False"
-                  ItemsSource="{Binding CurrentCar.Repairs}">
+        <DataGrid Grid.Column="1" Grid.RowSpan="2" Margin="15,0,0,0" Opacity="0.7" BorderThickness="0"
+                  Padding="0"
+                  AutoGenerateColumns="false" CanUserAddRows="False" ItemsSource="{Binding CurrentCar.Repairs}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Data" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Koszt" Binding="{Binding Cost}"/>
+                <DataGridTextColumn Header="Warsztat" Binding="{Binding WorkshopName}"/>
+            </DataGrid.Columns>
         </DataGrid>
-        
+
+
     </Grid>
 </UserControl>
