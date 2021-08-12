@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,18 +10,16 @@ namespace EKS.BackEnd.Models
     public class Repair
     {
         #region fields
-        public DateTime _date { get; private set; }
-        public string _title { get; private set; }
-        public string _description { get; private set; }
-        public decimal _cost { get; private set; }
-        public string _workshopName { get; private set; }
+        private DateTime _date;
+        private string _description;
+        private decimal _cost;
+        private string _workshopName;
         #endregion
 
         #region contructors
-        public Repair(DateTime date, string title, string description, decimal cost, string workshopName)
+        public Repair(DateTime date, string description, decimal cost, string workshopName)
         {
             this.Date = date;
-            this.Title = title;
             this.Description = description;
             this.Cost = cost;
             this.WorkshopName = workshopName;
@@ -37,17 +36,6 @@ namespace EKS.BackEnd.Models
             private set
             {
                 _date = value;
-            }
-        }
-        public string Title
-        {
-            get
-            {
-                return _title;
-            }
-            private set
-            {
-                _title = value;
             }
         }
         public string Description 

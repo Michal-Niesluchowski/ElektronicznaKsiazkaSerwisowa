@@ -8,10 +8,10 @@ namespace EKS.BackEnd.Models
 {
     public class Car
     {
-        #region fields
-        public string Name { get; private set; }
-        public string Plate { get; private set; }
-        public List<Repair> Repairs { get; private set; }
+        #region fields/properties
+        private string _name;
+        private string _plate;
+        private List<Repair> _repairs;
         #endregion
 
         #region constructors
@@ -23,14 +23,47 @@ namespace EKS.BackEnd.Models
         }
         #endregion
 
-        #region methods
-        public void AddRepair(DateTime date, string title, string description, decimal cost, string workshopName)
+        #region 
+        public string Name 
         {
-            Repair newRepair = new Repair(date, title, description, cost, workshopName);
-            this.Repairs.Add(newRepair);
+            get 
+            {
+                return _name;
+            }
+            private set
+            {
+                _name = value;
+            }
         }
+        public string Plate 
+        {
+            get 
+            {
+                return _plate;
+            }
+            private set
+            {
+                _plate = value;
+            }
+        }
+        public List<Repair> Repairs
+        {
+            get
+            {
+                return _repairs;
+            }
+            private set
+            {
+                _repairs = value;
+            }
+        }
+        #endregion
 
-        public string WorkshopName { get; private set; }
+        #region methods
+        public void AddRepair(Repair repair)
+        {
+            this.Repairs.Add(repair);
+        }
 
         public override string ToString()
         {

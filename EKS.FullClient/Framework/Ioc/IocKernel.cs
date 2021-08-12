@@ -14,14 +14,7 @@ namespace EKS.FullClient.Framework.Ioc
 
         public static T Get<T>()
         {
-            try
-            {
-                return _kernel.Get<T>();
-            }
-            catch (Exception)
-            {
-                throw new Exception("Dependency injection not registered in IocKernel.");
-            }
+            return _kernel.Get<T>();
         }
 
         public static void Initialize(params INinjectModule[] modules)

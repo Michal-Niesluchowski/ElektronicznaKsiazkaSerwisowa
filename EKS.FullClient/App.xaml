@@ -12,8 +12,8 @@
 
         <BVM:ViewModelLocator x:Key="ViewModelLocator"/>
 
-        <!--Default button style-->
-        <Style TargetType="{x:Type Button}">
+        <!--Default Button style-->
+        <Style x:Name="MainButton" TargetType="{x:Type Button}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontFamily" Value="Calibri" />
@@ -21,7 +21,7 @@
             <Setter Property="Background" Value="#F7E0C1"/>
         </Style>
 
-        <!--Default label style-->
+        <!--Default Label style-->
         <Style TargetType="{x:Type Label}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -32,7 +32,7 @@
             <Setter Property="Background" Value="#CDC753"/>
         </Style>
 
-        <!--Default textbox style-->
+        <!--Default TextBox style-->
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -41,8 +41,13 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
+        
+        <!--Custom TextBlock style for datagrid-->
+        <Style x:Key="ColumnStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5,0,5,0" />
+        </Style>
 
-        <!--Custom textblock style for titles in region -->
+        <!--Custom TextBlock style-->
         <Style x:Key="Title" TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Calibri"/>
@@ -52,7 +57,7 @@
             <Setter Property="TextWrapping" Value="NoWrap"/>
         </Style>
 
-        <!--Custom textblock style for text in region -->
+        <!--Custom TextBlock style-->
         <Style x:Key="JustText" TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Calibri"/>
@@ -61,25 +66,13 @@
             <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
         </Style>
 
-        <!--Custom User Control background with car-->
+        <!--Custom UserControl Background style-->
         <Style x:Key="CarInBackground" TargetType="{x:Type UserControl}">
             <Setter Property="Background">
                 <Setter.Value>
                     <ImageBrush ImageSource="/images/BackgroundStart.jpg"/>
                 </Setter.Value>
             </Setter>
-        </Style>
-
-        <!--Custom Grid cell style with light green-->
-        <Style x:Key="LightGreenGrid" TargetType="{x:Type Grid}">
-            <Setter Property="Background" Value="#ECEABE"/>
-            <Setter Property="Opacity" Value="0.7"/>
-        </Style>
-
-        <!--Custom DataGrid style form main table-->
-        <Style x:Key="MainTable" TargetType="{x:Type Grid}">
-            <Setter Property="Background" Value="#ECEABE"/>
-            <Setter Property="Opacity" Value="0.7"/>
         </Style>
 
     </Application.Resources>

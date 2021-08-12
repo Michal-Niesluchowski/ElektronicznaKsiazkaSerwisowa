@@ -2,6 +2,7 @@
 using EKS.FullClient.Framework;
 using EKS.FullClient.Framework.Navigation;
 using EKS.FullClient.Framework.TempData;
+using EKS.FullClient.Framework.DesignData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,14 +25,7 @@ namespace EKS.FullClient.ViewModels
         //ONLY FOR DESIGN TIME
         public CarMainScreenControlVM()
         {
-            Car newTestCar = new Car("Renault Clio", "WH 34822");
-            newTestCar.AddRepair(new DateTime(2021, 5, 20), "Wymiana oleju", "Olej Castrol 5w30, filtr oleju, płukanka",
-                500, "Marcin Głowice");
-            newTestCar.AddRepair(new DateTime(2021, 6, 19), "Naprawa klimatyzacji", "Wymiana sprężarki na regenerowaną",
-                1200, "Magic Mechanik");
-            newTestCar.AddRepair(new DateTime(2021, 7, 29), "Pierdolety", "Wymiana paska alternatowa + filtr paliwa",
-                100, "Marcin Głowice");
-            this.CurrentCar = newTestCar;
+            CurrentCar = DesignDataService.CreateCarWithRepairs();
         }
 
         public CarMainScreenControlVM(INavigationService navigationService, ITempDataService tempDataService)
@@ -39,7 +33,8 @@ namespace EKS.FullClient.ViewModels
             _navigationService = navigationService;
             _tempDataService = tempDataService;
 
-            CurrentCar = _tempDataService.LoadCar();
+            //CurrentCar = _tempDataService.LoadCar();
+            CurrentCar = DesignDataService.CreateCarWithRepairs();
 
             this.BackToMenuCommand = new RelayCommand(
                 action => GoToMenu());

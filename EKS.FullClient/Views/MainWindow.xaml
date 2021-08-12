@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EKS.FullClient.Views"
         mc:Ignorable="d"
-        d:DesignHeight="576" d:DesignWidth="1024"
-        SizeToContent="WidthAndHeight"
-        MinHeight="576" MinWidth="1024" Title="Elektroniczna Książka Serwisowa"
+        Height="576" Width="1024" Title="Elektroniczna Książka Serwisowa"
         DataContext="{Binding MainWindowViewModel, Source={StaticResource ViewModelLocator}}">
     
     <Window.Background>
