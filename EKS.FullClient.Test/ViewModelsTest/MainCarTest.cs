@@ -72,5 +72,25 @@ namespace EKS.FullClient.Test.ViewModelsTest
             mockNavigationService.Verify(ns => ns.NavigateToControl(
                 ControlsRegister.NewRepairControl), Times.Once);
         }
+
+        [TestMethod]
+        public void EditCarCommandTest()
+        {
+            //Arrange
+            var mockNavigationService = new Mock<INavigationService>();
+            mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.EditCarControl));
+
+            var mockTempDataService = new Mock<ITempDataService>();
+
+            MainCarVM viewModel = new MainCarVM(mockNavigationService.Object,
+                mockTempDataService.Object);
+
+            //Act
+            viewModel.EditCarCommand.Execute(null);
+
+            //Assert
+            mockNavigationService.Verify(ns => ns.NavigateToControl(
+                ControlsRegister.EditCarControl), Times.Once);
+        }
     }
 }

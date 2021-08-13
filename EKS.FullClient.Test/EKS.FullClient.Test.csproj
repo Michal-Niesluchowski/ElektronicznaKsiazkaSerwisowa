@@ -71,6 +71,7 @@
     <Compile Include="ViewModelsTest\NewCarTest.cs" />
     <Compile Include="ViewModelsTest\MainCarTest.cs" />
     <Compile Include="ViewModelsTest\NewRepairTest.cs" />
+    <Compile Include="ViewModelsTest\EditCarTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

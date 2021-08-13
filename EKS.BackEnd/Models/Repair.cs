@@ -101,6 +101,11 @@ namespace EKS.BackEnd.Models
                    this.Description == other.Description &&
                    this.WorkshopName == other.WorkshopName;
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
         #endregion
     }
 }

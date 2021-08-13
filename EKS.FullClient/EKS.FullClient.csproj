@@ -75,11 +75,15 @@
     <Compile Include="Framework\DesignData\DesignDataService.cs" />
     <Compile Include="Framework\Validations\DecimalValidation.cs" />
     <Compile Include="Framework\ViewModelLocator.cs" />
+    <Compile Include="ViewModels\EditCarVM.cs" />
     <Compile Include="ViewModels\MainCarVM.cs" />
     <Compile Include="ViewModels\HomeVM.cs" />
     <Compile Include="ViewModels\MainVM.cs" />
     <Compile Include="ViewModels\NewCarVM.cs" />
     <Compile Include="ViewModels\NewRepairVM.cs" />
+    <Compile Include="Views\EditCarControl.xaml.cs">
+      <DependentUpon>EditCarControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainCarControl.xaml.cs">
       <DependentUpon>MainCarControl.xaml</DependentUpon>
     </Compile>
@@ -99,6 +103,10 @@
     <Compile Include="Views\NewRepairControl.xaml.cs">
       <DependentUpon>NewRepairControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\EditCarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainCarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
