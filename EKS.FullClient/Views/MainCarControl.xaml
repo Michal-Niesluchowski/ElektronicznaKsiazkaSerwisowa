@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="EKS.FullClient.Views.CarMainScreenControl"
+﻿<UserControl x:Class="EKS.FullClient.Views.MainCarControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,12 +9,10 @@
              d:DesignHeight="576" d:DesignWidth="1024"
              d:DesignStyle="{StaticResource CarInBackground}"
              DataContext="{Binding CarMainScreenViewModel, Source={StaticResource ViewModelLocator}}"
-             d:DataContext="{d:DesignInstance localVM:CarMainScreenControlVM, IsDesignTimeCreatable=True}">
-
+             d:DataContext="{d:DesignInstance localVM:CarMainVM, IsDesignTimeCreatable=True}">
 
     <!--Main grid-->
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="50*"/>
@@ -102,6 +100,8 @@
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="FontFamily" Value="Calibri"/>
+                    <Setter Property="FontSize" Value="17"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     <Setter Property="Background" Value="#ECEABE"/>
                     <Setter Property="Height" Value="25"/>
@@ -115,43 +115,45 @@
                 <Style TargetType="{x:Type DataGridCell}">
                     <Style.Triggers>
                         <Trigger Property="DataGridCell.IsSelected" Value="True">
-                            <Setter Property="Background" Value="#F7E0C1" />
+                            <Setter Property="Background" Value="FloralWhite" />
                             <Setter Property="BorderBrush" Value="Gray"/>
                             <Setter Property="Foreground" Value="Black"/>
                         </Trigger>
                     </Style.Triggers>
                 </Style>
                 
-                <!-- Button style in DataGrid-->
+                <!--Button style-->
                 <Style x:Name="ButtonInGrid" TargetType="{x:Type Button}">
                     <Setter Property="Foreground" Value="Black"/>
-                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
                     <Setter Property="FontFamily" Value="Calibri" />
                     <Setter Property="FontSize" Value="15" />
                     <Setter Property="Background" Value="#F7E0C1"/>
                     <Setter Property="Margin" Value="5,0,0,0"/>
                     <Setter Property="Padding" Value="5,0,5,0"/>
+                    <Setter Property="Height" Value="20"/>
                     <Style.Resources>
                         <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="5" />
+                            <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Style.Resources>
                 </Style>
             </DataGrid.Resources>
             
-            <!--Content-->
+            <!--Columns-->
             <DataGrid.Columns>
                 
                 <!--Data-->
                 <DataGridTextColumn Width="100" 
-                                    Header="Data" 
-                                    ElementStyle="{StaticResource ColumnStyle}"
+                                    Header="Data"
+                                    ElementStyle="{StaticResource ApplyMargins}"
                                     Binding="{Binding Date, Mode=OneWay, StringFormat=\{0:dd MMM yyyy\}}"/>
                 
                 <!--Warsztat-->
                 <DataGridTextColumn Width="160" 
                                     Header="Warsztat" 
-                                    ElementStyle="{StaticResource ColumnStyle}"
+                                    ElementStyle="{StaticResource ApplyMargins}"
                                     Binding="{Binding WorkshopName, Mode=OneWay}"/>
                 
                 <!--Koszt-->
@@ -161,7 +163,7 @@
                     <DataGridTextColumn.ElementStyle>
                         <Style>
                             <Setter Property="TextBlock.TextAlignment" Value="Right" />
-                            <Setter Property="TextBlock.Margin" Value="5,0,5,0"/>
+                            <Setter Property="TextBlock.Margin" Value="5,3,5,0"/>
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
@@ -169,6 +171,7 @@
                 <!--Opis-->
                 <DataGridTextColumn Width="*" 
                                     Header="Opis" 
+                                    ElementStyle="{StaticResource ApplyMargins}"
                                     Binding="{Binding Description, Mode=OneWay}"/>
                 
                 <!--Przyciski-->
@@ -184,8 +187,6 @@
                 </DataGridTemplateColumn>
 
             </DataGrid.Columns>
-            
         </DataGrid>
-
     </Grid>
 </UserControl>

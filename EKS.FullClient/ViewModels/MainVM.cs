@@ -10,23 +10,20 @@ using EKS.FullClient.Framework.Navigation;
 
 namespace EKS.FullClient.ViewModels
 {
-    public class MainWindowVM : INotifyPropertyChanged
+    public class MainVM : INotifyPropertyChanged
     {
         #region fields
         private UserControl _currentControl;
         #endregion
 
         #region constructors
-        public MainWindowVM(INavigationService navigationService)
+        public MainVM(INavigationService navigationService)
         {
             //Subscripe to page navigation service
             navigationService.ControlChange += new EventHandler<UserControl>(UpdateCurrentControl);
 
             //Use navigation service to go to home control (home page)
-            //navigationService.NavigateToControl(ControlsRegister.HomeControl);
-
-
-            navigationService.NavigateToControl(ControlsRegister.CarMainScreenControl);
+            navigationService.NavigateToControl(ControlsRegister.HomeControl);
         }
         #endregion
 

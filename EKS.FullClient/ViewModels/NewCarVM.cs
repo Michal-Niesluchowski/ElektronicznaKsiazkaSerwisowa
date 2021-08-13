@@ -13,7 +13,7 @@ using EKS.FullClient.Framework.TempData;
 
 namespace EKS.FullClient.ViewModels
 {
-    public class NewCarControlVM : INotifyPropertyChanged
+    public class NewCarVM : INotifyPropertyChanged
     {
         #region fields
         private string _carName = "...";
@@ -23,7 +23,7 @@ namespace EKS.FullClient.ViewModels
         #endregion
 
         #region constructors
-        public NewCarControlVM(INavigationService navigationService, ITempDataService tempDataService)
+        public NewCarVM(INavigationService navigationService, ITempDataService tempDataService)
         {
             _navigationService = navigationService;
             _tempDataService = tempDataService;
@@ -71,7 +71,7 @@ namespace EKS.FullClient.ViewModels
         {
             Car newCar = new Car(CarName, CarPlate);
             _tempDataService.SaveCar(newCar);
-            _navigationService.NavigateToControl(ControlsRegister.CarMainScreenControl);
+            _navigationService.NavigateToControl(ControlsRegister.MainCarControl);
         }
 
         private bool CanCreateNewCar()

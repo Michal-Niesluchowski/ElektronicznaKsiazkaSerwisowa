@@ -65,10 +65,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewModelsTest\MainWindowViewModelTest.cs" />
+    <Compile Include="ViewModelsTest\MainTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModelsTest\HomeViewModelTest.cs" />
-    <Compile Include="ViewModelsTest\NewCarViewModelTest.cs" />
+    <Compile Include="ViewModelsTest\HomeTest.cs" />
+    <Compile Include="ViewModelsTest\NewCarTest.cs" />
+    <Compile Include="ViewModelsTest\MainCarTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

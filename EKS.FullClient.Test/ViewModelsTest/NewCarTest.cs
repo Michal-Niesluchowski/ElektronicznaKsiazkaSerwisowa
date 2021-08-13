@@ -9,7 +9,7 @@ using System;
 namespace EKS.FullClient.Test.ViewModelsTest
 {
     [TestClass]
-    public class NewCarViewModelTest
+    public class NewCarTest
     {
         [TestMethod]
         public void ConstructorTest()
@@ -21,7 +21,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             ITempDataService tempDataService = mockTempDataService.Object;
 
             //Act
-            NewCarControlVM viewModel = new NewCarControlVM(navigationService, tempDataService);
+            NewCarVM viewModel = new NewCarVM(navigationService, tempDataService);
             PrivateObject privateViewModel = new PrivateObject(viewModel);
 
             //Assert
@@ -36,13 +36,13 @@ namespace EKS.FullClient.Test.ViewModelsTest
         {
             //Arrange
             var mockNavigationService = new Mock<INavigationService>();
-            mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.CarMainScreenControl));
+            mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.MainCarControl));
             
             var mockTempDataService = new Mock<ITempDataService>();
             Car newCar = new Car("...", "...");
             mockTempDataService.Setup(tds => tds.SaveCar(newCar));
 
-            NewCarControlVM viewModel = new NewCarControlVM(mockNavigationService.Object, 
+            NewCarVM viewModel = new NewCarVM(mockNavigationService.Object, 
                 mockTempDataService.Object);
 
             //Act
@@ -50,7 +50,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
 
             //Assert
             mockNavigationService.Verify(ns => ns.NavigateToControl(
-                ControlsRegister.CarMainScreenControl), Times.Once);
+                ControlsRegister.MainCarControl), Times.Once);
 
             mockTempDataService.Verify(tds => tds.SaveCar(newCar), Times.Once);
         }
@@ -64,7 +64,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
 
             var mockTempDataService = new Mock<ITempDataService>();
 
-            NewCarControlVM viewModel = new NewCarControlVM(mockNavigationService.Object,
+            NewCarVM viewModel = new NewCarVM(mockNavigationService.Object,
                 mockTempDataService.Object);
 
             //Act
@@ -82,7 +82,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             var mockNavigationService = new Mock<INavigationService>();
             var mockTempDataService = new Mock<ITempDataService>();
 
-            NewCarControlVM viewModel = new NewCarControlVM(mockNavigationService.Object,
+            NewCarVM viewModel = new NewCarVM(mockNavigationService.Object,
                 mockTempDataService.Object);
 
             //Act
@@ -100,7 +100,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             var mockNavigationService = new Mock<INavigationService>();
             var mockTempDataService = new Mock<ITempDataService>();
 
-            NewCarControlVM viewModel = new NewCarControlVM(mockNavigationService.Object,
+            NewCarVM viewModel = new NewCarVM(mockNavigationService.Object,
                 mockTempDataService.Object);
 
             //Act

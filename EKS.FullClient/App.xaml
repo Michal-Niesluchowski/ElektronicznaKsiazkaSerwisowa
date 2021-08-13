@@ -42,9 +42,9 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
         
-        <!--Custom TextBlock style for datagrid-->
-        <Style x:Key="ColumnStyle" TargetType="TextBlock">
-            <Setter Property="Margin" Value="5,0,5,0" />
+        <!--Custom TextBlock style for DataGrid-->
+        <Style x:Key="ApplyMargins" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5,3,5,0" />
         </Style>
 
         <!--Custom TextBlock style-->

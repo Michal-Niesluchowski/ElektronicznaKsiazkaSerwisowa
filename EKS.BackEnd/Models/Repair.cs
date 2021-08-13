@@ -14,6 +14,7 @@ namespace EKS.BackEnd.Models
         private string _description;
         private decimal _cost;
         private string _workshopName;
+        private Guid _id;
         #endregion
 
         #region contructors
@@ -23,6 +24,7 @@ namespace EKS.BackEnd.Models
             this.Description = description;
             this.Cost = cost;
             this.WorkshopName = workshopName;
+            this.Id = Guid.NewGuid();
         }
         #endregion
 
@@ -69,6 +71,17 @@ namespace EKS.BackEnd.Models
             private set
             {
                 _workshopName = value;
+            }
+        }
+        public Guid Id
+        {
+            get
+            {
+                return _id;
+            }
+            private set
+            {
+                _id = value;
             }
         }
         #endregion

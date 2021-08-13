@@ -8,7 +8,7 @@ using System.Windows.Controls;
 namespace EKS.FullClient.Test.ViewModelsTest
 {
     [TestClass]
-    public class MainWindowViewModelTest
+    public class MainTest
     {
         [TestMethod]
         public void ConstructorTest()
@@ -18,7 +18,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.HomeControl));
 
             //Act
-            MainWindowVM viewModel = new MainWindowVM(mockNavigationService.Object);
+            MainVM viewModel = new MainVM(mockNavigationService.Object);
             
             //Assert
             mockNavigationService.Verify(ns => ns.NavigateToControl(ControlsRegister.HomeControl), Times.Once);
@@ -32,7 +32,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             var expected = new Mock<UserControl>().Object;
             var mockNavigationServie = new Mock<INavigationService>().Object;
             
-            MainWindowVM viewModel = new MainWindowVM(mockNavigationServie);
+            MainVM viewModel = new MainVM(mockNavigationServie);
 
             //Act
             PrivateObject privateViewModel = new PrivateObject(viewModel);

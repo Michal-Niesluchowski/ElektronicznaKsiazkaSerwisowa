@@ -19,10 +19,10 @@ namespace EKS.FullClient.Framework.Ioc
             Bind<ITempDataService>().To<TempDataService>().InSingletonScope();
 
             //View models
-            Bind<MainWindowVM>().ToSelf().InTransientScope();
-            Bind<HomeControlVM>().ToSelf().InTransientScope();
-            Bind<NewCarControlVM>().ToSelf().InTransientScope();
-            Bind<CarMainScreenControlVM>().ToSelf().InTransientScope();
+            Bind<MainVM>().ToSelf().InTransientScope();
+            Bind<HomeVM>().ToSelf().InTransientScope();
+            Bind<NewCarVM>().ToSelf().InTransientScope();
+            Bind<MainCarVM>().ToSelf().InTransientScope();
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Windows.Input;
 namespace EKS.FullClient.Test.ViewModelsTest
 {
     [TestClass]
-    public class HomeViewModelTest
+    public class HomeTest
     {
         [TestMethod]
         public void ConstructorTest()
@@ -18,7 +18,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             INavigationService navigationService = mockNavigationService.Object;
 
             //Act
-            HomeControlVM viewModel = new HomeControlVM(navigationService);
+            HomeVM viewModel = new HomeVM(navigationService);
             PrivateObject privateViewModel = new PrivateObject(viewModel);
 
             //Assert
@@ -32,7 +32,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             var mockNavigationService = new Mock<INavigationService>();
             mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.NewCarControl));
             INavigationService navigationService = mockNavigationService.Object;
-            HomeControlVM viewModel = new HomeControlVM(navigationService);
+            HomeVM viewModel = new HomeVM(navigationService);
 
             //Act
             viewModel.GoToNewCarControlCommand.Execute(null);

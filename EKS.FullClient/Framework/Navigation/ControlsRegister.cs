@@ -10,6 +10,6 @@ namespace EKS.FullClient.Framework.Navigation
     {
         HomeControl,
         NewCarControl,
-        CarMainScreenControl
+        MainCarControl
     }
 }

@@ -74,12 +74,12 @@
     <Compile Include="Framework\TempData\TempDataService.cs" />
     <Compile Include="Framework\DesignData\DesignDataService.cs" />
     <Compile Include="Framework\ViewModelLocator.cs" />
-    <Compile Include="ViewModels\CarMainScreenControlVM.cs" />
-    <Compile Include="ViewModels\HomeControlVM.cs" />
-    <Compile Include="ViewModels\MainWindowVM.cs" />
-    <Compile Include="ViewModels\NewCarControlVM.cs" />
-    <Compile Include="Views\CarMainScreenControl.xaml.cs">
-      <DependentUpon>CarMainScreenControl.xaml</DependentUpon>
+    <Compile Include="ViewModels\MainCarVM.cs" />
+    <Compile Include="ViewModels\HomeVM.cs" />
+    <Compile Include="ViewModels\MainVM.cs" />
+    <Compile Include="ViewModels\NewCarVM.cs" />
+    <Compile Include="Views\MainCarControl.xaml.cs">
+      <DependentUpon>MainCarControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NewCarControl.xaml.cs">
       <DependentUpon>NewCarControl.xaml</DependentUpon>
@@ -94,7 +94,7 @@
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\CarMainScreenControl.xaml">
+    <Page Include="Views\MainCarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

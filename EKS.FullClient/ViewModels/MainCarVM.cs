@@ -13,7 +13,7 @@ using System.Windows.Input;
 
 namespace EKS.FullClient.ViewModels
 {
-    public class CarMainScreenControlVM : INotifyPropertyChanged
+    public class MainCarVM : INotifyPropertyChanged
     {
         #region fields
         private Car _currentCar;
@@ -22,19 +22,18 @@ namespace EKS.FullClient.ViewModels
         #endregion
 
         #region constructors
-        //ONLY FOR DESIGN TIME
-        public CarMainScreenControlVM()
+        //Parameterless constructor used solely for designing in xaml
+        public MainCarVM()
         {
             CurrentCar = DesignDataService.CreateCarWithRepairs();
         }
 
-        public CarMainScreenControlVM(INavigationService navigationService, ITempDataService tempDataService)
+        public MainCarVM(INavigationService navigationService, ITempDataService tempDataService)
         {
             _navigationService = navigationService;
             _tempDataService = tempDataService;
 
-            //CurrentCar = _tempDataService.LoadCar();
-            CurrentCar = DesignDataService.CreateCarWithRepairs();
+            CurrentCar = _tempDataService.LoadCar();
 
             this.BackToMenuCommand = new RelayCommand(
                 action => GoToMenu());

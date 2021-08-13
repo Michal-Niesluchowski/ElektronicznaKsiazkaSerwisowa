@@ -3,11 +3,11 @@
 namespace EKS.FullClient.Views
 {
     /// <summary>
-    /// Interaction logic for CarMainScreenControl.xaml
+    /// Interaction logic for CarMainControl.xaml
     /// </summary>
-    public partial class CarMainScreenControl : UserControl
+    public partial class MainCarControl : UserControl
     {
-        public CarMainScreenControl()
+        public MainCarControl()
         {
             InitializeComponent();
         }
