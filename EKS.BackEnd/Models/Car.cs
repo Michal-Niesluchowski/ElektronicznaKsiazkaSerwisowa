@@ -8,7 +8,7 @@ namespace EKS.BackEnd.Models
 {
     public class Car
     {
-        #region fields/properties
+        #region fields
         private string _name;
         private string _plate;
         private List<Repair> _repairs;
@@ -23,7 +23,7 @@ namespace EKS.BackEnd.Models
         }
         #endregion
 
-        #region 
+        #region properties
         public string Name 
         {
             get 

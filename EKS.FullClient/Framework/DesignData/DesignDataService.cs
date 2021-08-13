@@ -110,5 +110,11 @@ namespace EKS.FullClient.Framework.DesignData
 
             return car;
         }
+
+        internal static Repair CreateRepair()
+        {
+            return new Repair(new DateTime(2021, 5, 20), 
+                "Olej Castrol 5w30, filtr oleju, płukanka", 500, "Marcin Głowice");
+        }
     }
 }

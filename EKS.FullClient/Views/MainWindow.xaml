@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EKS.FullClient.Views"
         mc:Ignorable="d"
         Height="576" Width="1024" Title="Elektroniczna Książka Serwisowa"
-        DataContext="{Binding MainWindowViewModel, Source={StaticResource ViewModelLocator}}">
+        DataContext="{Binding MainVM, Source={StaticResource ViewModelLocator}}">
     
     <Window.Background>
         <ImageBrush ImageSource="/images/BackgroundStart.jpg"/>

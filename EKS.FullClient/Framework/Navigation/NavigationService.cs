@@ -27,6 +27,9 @@ namespace EKS.FullClient.Framework.Navigation
                 case ControlsRegister.MainCarControl:
                     userControl = new MainCarControl();
                     break;
+                case ControlsRegister.NewRepairControl:
+                    userControl = new NewRepairControl();
+                    break;
                 default:
                     throw new Exception("Control not registered in NavigationService");
             }

@@ -40,9 +40,31 @@
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                                    Path=(Validation.Errors)/ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
-        
-        <!--Custom TextBlock style for DataGrid-->
+
+        <!--Custom error style-->
+        <ControlTemplate x:Key="validationTemplate">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Left"
+                           Foreground="Red" 
+                           FontSize="17"
+                           FontFamily="Calibri"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="Błąd"/>
+                <AdornedElementPlaceholder/>
+            </DockPanel>
+        </ControlTemplate>
+
+        <!--Custom TextBlock style-->
         <Style x:Key="ApplyMargins" TargetType="TextBlock">
             <Setter Property="Margin" Value="5,3,5,0" />
         </Style>

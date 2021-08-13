@@ -23,6 +23,7 @@ namespace EKS.FullClient.Framework.Ioc
             Bind<HomeVM>().ToSelf().InTransientScope();
             Bind<NewCarVM>().ToSelf().InTransientScope();
             Bind<MainCarVM>().ToSelf().InTransientScope();
+            Bind<NewRepairVM>().ToSelf().InTransientScope();
         }
     }
 }

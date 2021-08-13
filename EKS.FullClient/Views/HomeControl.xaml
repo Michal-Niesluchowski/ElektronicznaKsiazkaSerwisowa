@@ -7,16 +7,16 @@
         mc:Ignorable="d"
         d:DesignHeight="576" d:DesignWidth="1024"
         d:DesignStyle="{StaticResource CarInBackground}"
-        DataContext="{Binding HomePageViewModel, Source={StaticResource ViewModelLocator}}">
+        DataContext="{Binding HomeVM, Source={StaticResource ViewModelLocator}}">
 
     <Grid>
         
         <!--Grid definition-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
-            <RowDefinition Height="50*" MinHeight="50"></RowDefinition>
+            <RowDefinition Height="200" MinHeight="50"></RowDefinition>
         </Grid.RowDefinitions>
 
         <!--Buttons-->

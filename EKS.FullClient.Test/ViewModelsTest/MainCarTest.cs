@@ -52,5 +52,25 @@ namespace EKS.FullClient.Test.ViewModelsTest
             mockNavigationService.Verify(ns => ns.NavigateToControl(
                 ControlsRegister.HomeControl), Times.Once);
         }
+
+        [TestMethod]
+        public void AddNewRepairCommandTest()
+        {
+            //Arrange
+            var mockNavigationService = new Mock<INavigationService>();
+            mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.NewRepairControl));
+
+            var mockTempDataService = new Mock<ITempDataService>();
+
+            MainCarVM viewModel = new MainCarVM(mockNavigationService.Object,
+                mockTempDataService.Object);
+
+            //Act
+            viewModel.AddNewRepairCommand.Execute(null);
+
+            //Assert
+            mockNavigationService.Verify(ns => ns.NavigateToControl(
+                ControlsRegister.NewRepairControl), Times.Once);
+        }
     }
 }

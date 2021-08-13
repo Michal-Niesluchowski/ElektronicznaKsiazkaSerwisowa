@@ -54,7 +54,6 @@ namespace EKS.FullClient.ViewModels
             get { return _carName; }
             set { _carName = value; }
         }
-        
         public string CarPlate
         {
             get { return _carPlate; }
@@ -62,7 +61,6 @@ namespace EKS.FullClient.ViewModels
         }
 
         public ICommand NewCarCommand { get; private set; }
-
         public ICommand CancelCommand { get; private set; }
         #endregion
 

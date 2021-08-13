@@ -35,8 +35,8 @@ namespace EKS.FullClient.ViewModels
 
             CurrentCar = _tempDataService.LoadCar();
 
-            this.BackToMenuCommand = new RelayCommand(
-                action => GoToMenu());
+            this.BackToMenuCommand = new RelayCommand(action => GoToMenu());
+            this.AddNewRepairCommand = new RelayCommand(action => GotoAddNewRepair());
         }
         #endregion
 
@@ -66,12 +66,18 @@ namespace EKS.FullClient.ViewModels
         }
 
         public ICommand BackToMenuCommand { get; private set; }
+        public ICommand AddNewRepairCommand { get; private set; }
         #endregion
 
         #region methods
         private void GoToMenu()
         {
             _navigationService.NavigateToControl(ControlsRegister.HomeControl);
+        }
+
+        private void GotoAddNewRepair()
+        {
+            _navigationService.NavigateToControl(ControlsRegister.NewRepairControl);
         }
         #endregion
     }

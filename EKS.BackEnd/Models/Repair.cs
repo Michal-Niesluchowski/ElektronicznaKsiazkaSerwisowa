@@ -85,5 +85,22 @@ namespace EKS.BackEnd.Models
             }
         }
         #endregion
+
+        #region methods
+        public override bool Equals(object obj)
+        {
+            Repair other = obj as Repair;
+
+            if (other == null)
+            {
+                return false;
+            }
+
+            return this.Cost == other.Cost &&
+                   this.Date == other.Date &&
+                   this.Description == other.Description &&
+                   this.WorkshopName == other.WorkshopName;
+        }
+        #endregion
     }
 }
