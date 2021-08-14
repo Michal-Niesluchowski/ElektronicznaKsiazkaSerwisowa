@@ -5,3 +5,4 @@
 004. As a user, I want to edit car details, because I made typo when creating this car.
 005. As a user, I want to save and  load my car with repairs, 
 	so I don't have to start from scratch everytime I launch application.
+006. As a user, I want to edit repair, because I made typo when creating it.

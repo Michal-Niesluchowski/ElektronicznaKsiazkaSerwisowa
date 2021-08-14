@@ -12,6 +12,7 @@ namespace EKS.FullClient.Framework.Navigation
         NewCarControl,
         MainCarControl,
         NewRepairControl,
-        EditCarControl
+        EditCarControl,
+        EditRepairControl
     }
 }

@@ -23,11 +23,13 @@ namespace EKS.FullClient.Framework.Ioc
             Bind<IXmlRepository>().To<XmlRepository>().InSingletonScope();
 
             //View models
-            Bind<MainVM>().ToSelf().InTransientScope();
-            Bind<HomeVM>().ToSelf().InTransientScope();
-            Bind<NewCarVM>().ToSelf().InTransientScope();
-            Bind<MainCarVM>().ToSelf().InTransientScope();
-            Bind<NewRepairVM>().ToSelf().InTransientScope();
+            //Bind<MainVM>().ToSelf().InTransientScope();
+            //Bind<HomeVM>().ToSelf().InTransientScope();
+            //Bind<NewCarVM>().ToSelf().InTransientScope();
+            //Bind<MainCarVM>().ToSelf().InTransientScope();
+            //Bind<NewRepairVM>().ToSelf().InTransientScope();
+            ////Bind<EditCarVM>().ToSelf().InTransientScope();
+            //Bind<EditRepairVM>().ToSelf().InTransientScope();
         }
     }
 }

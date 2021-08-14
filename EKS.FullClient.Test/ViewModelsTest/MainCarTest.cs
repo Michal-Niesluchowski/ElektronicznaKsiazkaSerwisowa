@@ -52,6 +52,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.HomeControl));
 
             var mockTempDataService = new Mock<ITempDataService>();
+            mockTempDataService.Setup(tds => tds.ClearCar());
 
             MainCarVM viewModel = new MainCarVM(mockNavigationService.Object,
                 mockTempDataService.Object, null, null);
@@ -62,6 +63,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             //Assert
             mockNavigationService.Verify(ns => ns.NavigateToControl(
                 ControlsRegister.HomeControl), Times.Once);
+            mockTempDataService.Verify(tds => tds.ClearCar(), Times.Once);
         }
 
         [TestMethod]
@@ -129,6 +131,33 @@ namespace EKS.FullClient.Test.ViewModelsTest
 
             //Assert
             mockUserDialogService.Verify(uds => uds.InformUser("Plik z Twoim autem został zapisany."), Times.Once);
+        }
+
+        [TestMethod]
+        public void EditRepairCommandTest()
+        {
+            //Arrange
+            var mockNavigationService = new Mock<INavigationService>();
+            mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.EditRepairControl));
+
+            ITempDataService tempDataService = new TempDataService();
+
+            var mockUserDialogService = new Mock<IUserDialogService>();
+
+            var mockXmlRepository = new Mock<IXmlRepository>();
+
+            MainCarVM viewModel = new MainCarVM(mockNavigationService.Object, tempDataService,
+                mockUserDialogService.Object, mockXmlRepository.Object);
+
+            Repair repair = new Repair(DateTime.Today, "desc", 10m, "warsztat");
+
+            //Act
+            viewModel.EditRepairCommand.Execute(repair);
+
+            //Assert
+            Assert.AreEqual(repair, tempDataService.LoadRepair());
+            mockNavigationService.Verify(ns => ns.NavigateToControl(ControlsRegister.EditRepairControl), Times.Once);
+
         }
     }
 }

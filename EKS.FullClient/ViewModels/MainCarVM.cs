@@ -46,10 +46,11 @@ namespace EKS.FullClient.ViewModels
 
             CurrentCar = _tempDataService.LoadCar();
 
-            this.BackToMenuCommand = new RelayCommand(action => GoToMenu());
-            this.AddNewRepairCommand = new RelayCommand(action => GotoAddNewRepair());
-            this.EditCarCommand = new RelayCommand(action => EditCar());
-            this.SaveCarToDriveCommand = new RelayCommand(action => SaveCarToDrive());
+            BackToMenuCommand = new RelayCommand(action => GoToMenu());
+            AddNewRepairCommand = new RelayCommand(action => GotoAddNewRepair());
+            EditCarCommand = new RelayCommand(action => EditCar());
+            SaveCarToDriveCommand = new RelayCommand(action => SaveCarToDrive());
+            EditRepairCommand = new RelayCommand(action => EditRepair(action));
         }
         #endregion
 
@@ -82,12 +83,14 @@ namespace EKS.FullClient.ViewModels
         public ICommand AddNewRepairCommand { get; private set; }
         public ICommand EditCarCommand { get; private set; }
         public ICommand SaveCarToDriveCommand { get; private set; }
+        public ICommand EditRepairCommand { get; private set; }
         #endregion
 
         #region methods
         private void GoToMenu()
         {
             _navigationService.NavigateToControl(ControlsRegister.HomeControl);
+            _tempDataService.ClearCar();
         }
 
         private void GotoAddNewRepair()
@@ -123,6 +126,15 @@ namespace EKS.FullClient.ViewModels
                     _userDialogService.InformUser("Nie udało się zapisać pliku.");
                 }
             }
+        }
+
+        private void EditRepair(object parameter)
+        {
+            Repair selectedRepair = parameter as Repair;
+
+            _tempDataService.SaveRepair(selectedRepair);
+
+            _navigationService.NavigateToControl(ControlsRegister.EditRepairControl);
         }
         #endregion
     }

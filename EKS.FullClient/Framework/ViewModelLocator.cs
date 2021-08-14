@@ -39,5 +39,10 @@ namespace EKS.FullClient.Framework
         {
             get { return IocKernel.Get<EditCarVM>(); }
         }
+
+        public EditRepairVM EditRepairVM
+        {
+            get { return IocKernel.Get<EditRepairVM>(); }
+        }
     }
 }

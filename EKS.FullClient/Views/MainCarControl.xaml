@@ -95,7 +95,8 @@
                   RowBackground="Transparent"
                   HorizontalGridLinesBrush="Gray"
                   VerticalGridLinesBrush="Gray"
-                  RowHeight="25">
+                  RowHeight="25"
+                  x:Name="RepairTable">
 
             <!--Column headers style definition-->
             <DataGrid.ColumnHeaderStyle>
@@ -180,7 +181,10 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Button Content="Edytuj"/>
+                            <Button Content="Edytuj" 
+                                    CommandParameter="{Binding ElementName=RepairTable, Path=SelectedItem}"
+                                    Command="{Binding Path=MainCarVM.EditRepairCommand, 
+                                                      Source={StaticResource ViewModelLocator}}"/>
                             <Button Content="Usuń"/>
                         </StackPanel>
                     </DataTemplate>

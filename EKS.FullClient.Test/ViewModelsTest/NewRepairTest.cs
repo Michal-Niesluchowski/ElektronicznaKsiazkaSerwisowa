@@ -40,6 +40,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
             //Arrange
             var mockNavigationService = new Mock<INavigationService>();
             mockNavigationService.Setup(ns => ns.NavigateToControl(ControlsRegister.MainCarControl));
+
             var mockTempDataService = new Mock<ITempDataService>();
 
             //Act
@@ -83,11 +84,11 @@ namespace EKS.FullClient.Test.ViewModelsTest
             tempDataService.SaveCar(testCar);
 
             Car expectedCar = new Car("name", "plate");
-            expectedCar.AddRepair(new Repair(DateTime.Now, "description", 100m, "workshop"));
+            expectedCar.AddRepair(new Repair(DateTime.Today, "description", 100m, "workshop"));
 
             NewRepairVM viewModel = new NewRepairVM(mockNavigationService.Object, tempDataService);
             viewModel.RepairCost = 100m;
-            viewModel.RepairDate = DateTime.Now;
+            viewModel.RepairDate = DateTime.Today;
             viewModel.RepairDescription = "description";
             viewModel.RepairWorkshopName = "workshop";
 
@@ -124,7 +125,7 @@ namespace EKS.FullClient.Test.ViewModelsTest
 
             NewRepairVM viewModel = new NewRepairVM(mockNavigationService.Object, mockTempDataService.Object);
             viewModel.RepairCost = 100m;
-            viewModel.RepairDate = DateTime.Now;
+            viewModel.RepairDate = DateTime.Today;
             viewModel.RepairDescription = "description";
             viewModel.RepairWorkshopName = "workshop";
 

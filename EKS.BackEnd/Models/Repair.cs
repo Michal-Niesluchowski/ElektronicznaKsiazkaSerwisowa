@@ -92,6 +92,14 @@ namespace EKS.BackEnd.Models
         #endregion
 
         #region methods
+        public void EditRepair(DateTime date, string description, decimal cost, string workshopName)
+        {
+            this.Date = date;
+            this.Description = description;
+            this.Cost = cost;
+            this.WorkshopName = workshopName;
+        }
+        
         public RepairEntity ToEntity()
         {
             return new RepairEntity
