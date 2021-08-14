@@ -3,11 +3,7 @@ using EKS.FullClient.Framework;
 using EKS.FullClient.Framework.Navigation;
 using EKS.FullClient.Framework.TempData;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace EKS.FullClient.ViewModels

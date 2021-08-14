@@ -4,7 +4,6 @@ using EKS.FullClient.Framework.TempData;
 using EKS.FullClient.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
 
 namespace EKS.FullClient.Test.ViewModelsTest
 {

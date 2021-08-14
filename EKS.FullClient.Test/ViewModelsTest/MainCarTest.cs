@@ -54,8 +54,12 @@ namespace EKS.FullClient.Test.ViewModelsTest
             var mockTempDataService = new Mock<ITempDataService>();
             mockTempDataService.Setup(tds => tds.ClearCar());
 
+            var mockUserDialogService = new Mock<IUserDialogService>();
+            mockUserDialogService.Setup(uds => uds.AskForConfirmation(
+                "Czy na pewno chcesz przejść do menu? Niezapisane zmiany zostaną utracone.")).Returns(true);
+
             MainCarVM viewModel = new MainCarVM(mockNavigationService.Object,
-                mockTempDataService.Object, null, null);
+                mockTempDataService.Object, mockUserDialogService.Object, null);
 
             //Act
             viewModel.BackToMenuCommand.Execute(null);
@@ -64,6 +68,8 @@ namespace EKS.FullClient.Test.ViewModelsTest
             mockNavigationService.Verify(ns => ns.NavigateToControl(
                 ControlsRegister.HomeControl), Times.Once);
             mockTempDataService.Verify(tds => tds.ClearCar(), Times.Once);
+            mockUserDialogService.Verify(uds => uds.AskForConfirmation(
+                "Czy na pewno chcesz przejść do menu? Niezapisane zmiany zostaną utracone."), Times.Once);
         }
 
         [TestMethod]

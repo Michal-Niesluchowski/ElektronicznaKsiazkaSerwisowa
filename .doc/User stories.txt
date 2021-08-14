@@ -7,3 +7,5 @@
 	so I don't have to start from scratch everytime I launch application.
 006. As a user, I want to edit repair, because I made typo when creating it.
 007. As a user, I want to delete repair, because I created it by coincidence.
+008. As a user, I want to ba asked when I am about to lose unsaved data,
+	so I don't waste my job because of inattention.

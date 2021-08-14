@@ -6,8 +6,6 @@ using EKS.FullClient.Framework.UserDialog;
 using EKS.FullClient.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
-using System.Windows.Input;
 
 namespace EKS.FullClient.Test.ViewModelsTest
 {

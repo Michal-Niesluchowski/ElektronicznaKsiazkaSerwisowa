@@ -1,18 +1,11 @@
 ﻿using EKS.BackEnd.Models;
+using EKS.FullClient.Framework;
 using EKS.FullClient.Framework.DesignData;
-using System;
-using System.ComponentModel;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using EKS.FullClient.Framework.Navigation;
 using EKS.FullClient.Framework.TempData;
-using EKS.FullClient.Framework;
-using System.Windows;
-using System.Windows.Controls;
-using System.Globalization;
+using System;
+using System.ComponentModel;
+using System.Windows.Input;
 
 namespace EKS.FullClient.ViewModels
 {

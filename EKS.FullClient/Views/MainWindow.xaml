@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Height="576" Width="1024" Title="Elektroniczna Książka Serwisowa"
         DataContext="{Binding MainVM, Source={StaticResource ViewModelLocator}}">
-    
+
     <Window.Background>
         <ImageBrush ImageSource="/images/BackgroundStart.jpg"/>
     </Window.Background>
- 
+
     <ContentControl Content="{Binding CurrentControl}"/>
+    
     
 </Window>
