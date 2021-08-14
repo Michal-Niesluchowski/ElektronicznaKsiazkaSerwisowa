@@ -136,9 +136,10 @@ namespace EKS.BackEnd.Models
             return this.Cost == other.Cost &&
                    this.Date == other.Date &&
                    this.Description == other.Description &&
-                   this.WorkshopName == other.WorkshopName;
+                   this.WorkshopName == other.WorkshopName &&
+                   this.Id == other.Id;
         }
-        
+
         public override int GetHashCode()
         {
             return base.GetHashCode();

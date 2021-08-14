@@ -10,6 +10,9 @@ namespace EKS.FullClient.Framework.UserDialog
 {
     public class UserDialogService : IUserDialogService
     {
+        private const string Title = "Elektroniczna Książka Serwisowa";
+
+
         public string SaveFile(string defauleFileName)
         {
             var fileDialog = new SaveFileDialog();
@@ -48,7 +51,21 @@ namespace EKS.FullClient.Framework.UserDialog
 
         public void InformUser(string information)
         {
-            MessageBox.Show(information, "Elektroniczna Książka Serwisowa", MessageBoxButton.OK);
+            MessageBox.Show(information, Title, MessageBoxButton.OK);
+        }
+
+        public bool AskForConfirmation(string information)
+        {
+            var result = MessageBox.Show(information, Title, MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

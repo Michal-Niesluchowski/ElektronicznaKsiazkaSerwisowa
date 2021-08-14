@@ -70,9 +70,9 @@ namespace EKS.FullClient.Test.ViewModelsTest
             Repair testRepair1 = new Repair(DateTime.Today, "testdescription1", 111m, "testworkshop2");
             Repair testRepair2 = new Repair(DateTime.Today, "testdescription2", 222m, "testworkshop2");
             testCar.AddRepair(testRepair1);
-            testCar.AddRepair(testRepair1);
+            testCar.AddRepair(testRepair2);
             tempDataService.SaveCar(testCar);
-            tempDataService.SaveRepair(testRepair1);
+            tempDataService.SaveRepair(testRepair2);
 
             EditRepairVM viewModel = new EditRepairVM(mockNavigationService.Object, tempDataService);
             viewModel.RepairDate = new DateTime(2021,8,14);
@@ -82,12 +82,14 @@ namespace EKS.FullClient.Test.ViewModelsTest
 
             //Act
             viewModel.EditRepairCommand.Execute(null);
+            Car actual = tempDataService.LoadCar();
 
             //Assert
-            Assert.AreEqual(new DateTime(2021, 8, 14), testRepair1.Date);
-            Assert.AreEqual("testdescription3", testRepair1.Description);
-            Assert.AreEqual(333m, testRepair1.Cost);
-            Assert.AreEqual("testworkshop3", testRepair1.WorkshopName);
+            Assert.AreEqual(new DateTime(2021, 8, 14), testRepair2.Date);
+            Assert.AreEqual("testdescription3", testRepair2.Description);
+            Assert.AreEqual(333m, testRepair2.Cost);
+            Assert.AreEqual("testworkshop3", testRepair2.WorkshopName);
+            Assert.AreEqual(testRepair1, testCar.Repairs[0]);
             Assert.IsNull(tempDataService.LoadRepair());
             mockNavigationService.Verify(ns => ns.NavigateToControl(ControlsRegister.MainCarControl), Times.Once);
         }
@@ -123,7 +125,9 @@ namespace EKS.FullClient.Test.ViewModelsTest
                 new Repair(DateTime.Today, "desc", 10m, "workshop"));
 
             EditRepairVM viewModel = new EditRepairVM(mockNavigationService.Object, mockTempDataService.Object);
-            viewModel.RepairDescription = "";
+            viewModel.RepairDate = default;
+            viewModel.RepairDescription = "...";
+            viewModel.RepairCost = default;
             viewModel.RepairWorkshopName = "";
 
             //Act

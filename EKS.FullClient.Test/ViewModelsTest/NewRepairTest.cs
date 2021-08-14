@@ -83,9 +83,6 @@ namespace EKS.FullClient.Test.ViewModelsTest
             Car testCar = new Car("name", "plate");
             tempDataService.SaveCar(testCar);
 
-            Car expectedCar = new Car("name", "plate");
-            expectedCar.AddRepair(new Repair(DateTime.Today, "description", 100m, "workshop"));
-
             NewRepairVM viewModel = new NewRepairVM(mockNavigationService.Object, tempDataService);
             viewModel.RepairCost = 100m;
             viewModel.RepairDate = DateTime.Today;
@@ -96,8 +93,10 @@ namespace EKS.FullClient.Test.ViewModelsTest
             viewModel.AddRepairCommand.Execute(null);
 
             //Assert
-            Assert.AreEqual(expectedCar, tempDataService.LoadCar());
-            CollectionAssert.AreEqual(expectedCar.Repairs, tempDataService.LoadCar().Repairs);
+            Assert.AreEqual(100m, testCar.Repairs[0].Cost);
+            Assert.AreEqual(DateTime.Today, testCar.Repairs[0].Date);
+            Assert.AreEqual("description", testCar.Repairs[0].Description);
+            Assert.AreEqual("workshop", testCar.Repairs[0].WorkshopName);
         }
 
         [TestMethod]

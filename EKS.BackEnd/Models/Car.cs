@@ -1,6 +1,7 @@
 ﻿using EKS.BackEnd.DAL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,18 +15,15 @@ namespace EKS.BackEnd.Models
         #region fields/properties
         private string _name;
         private string _plate;
-        private List<Repair> _repairs;
+        private ObservableCollection<Repair> _repairs;
         #endregion
 
         #region constructors
-        public Car()
-        {
-        }
         public Car(string name, string plate)
         {
             this.Name = name;
             this.Plate = plate;
-            this.Repairs = new List<Repair>();
+            this.Repairs = new ObservableCollection<Repair>();
         }
         #endregion
 
@@ -52,7 +50,7 @@ namespace EKS.BackEnd.Models
                 _plate = value;
             }
         }
-        public List<Repair> Repairs
+        public ObservableCollection<Repair> Repairs
         {
             get
             {
@@ -75,6 +73,13 @@ namespace EKS.BackEnd.Models
         public void AddRepair(Repair repair)
         {
             this.Repairs.Add(repair);
+        }
+
+        public void DeleteRepair(Guid repairId)
+        {
+            Repair repair = this.Repairs.Where(r => r.Id == repairId).FirstOrDefault();
+
+            this.Repairs.Remove(repair);
         }
 
         public CarEntity ToEntity()
@@ -115,13 +120,21 @@ namespace EKS.BackEnd.Models
         {
             Car other = obj as Car;
 
-            if (other == null)
+            if (other == null) return false;
+
+            if (this.Name != other.Name) return false;
+
+            if (this.Plate != other.Plate) return false;
+
+            for (int i = 0; i < this.Repairs.Count; i++)
             {
-                return false;
+                if (! this.Repairs[0].Equals(other.Repairs[0]))
+                {
+                    return false;
+                }
             }
 
-            return this.Name == other.Name &&
-                   this.Plate == other.Plate;
+            return true;
         }
 
         public override int GetHashCode()

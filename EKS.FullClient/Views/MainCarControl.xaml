@@ -89,7 +89,7 @@
                   FontFamily="Calibri"
                   AutoGenerateColumns="false" 
                   CanUserAddRows="False" 
-                  ItemsSource="{Binding CurrentCar.Repairs}"
+                  ItemsSource="{Binding CurrentCar.Repairs, Mode=OneWay}"
                   HeadersVisibility="Column"
                   Background="Transparent"
                   RowBackground="Transparent"
@@ -181,12 +181,17 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                         <StackPanel Orientation="Horizontal">
+                            
                             <Button Content="Edytuj" 
                                     CommandParameter="{Binding ElementName=RepairTable, Path=SelectedItem}"
                                     Command="{Binding Path=MainCarVM.EditRepairCommand, 
-                                                      Source={StaticResource ViewModelLocator}}"/>
-                            <Button Content="Usuń"/>
-                        </StackPanel>
+                                        Source={StaticResource ViewModelLocator}}"/>
+                            
+                            <Button Content="Usuń" 
+                                    CommandParameter="{Binding ElementName=RepairTable, Path=SelectedItem}"
+                                    Command="{Binding Path=MainCarVM.DeleteRepairCommand, 
+                                        Source={StaticResource ViewModelLocator}}"/>
+                            </StackPanel>
                     </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

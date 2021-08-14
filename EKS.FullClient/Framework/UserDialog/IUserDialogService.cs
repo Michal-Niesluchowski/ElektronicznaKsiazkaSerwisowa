@@ -13,5 +13,7 @@ namespace EKS.FullClient.Framework.UserDialog
         string OpenFile();
 
         void InformUser(string information);
+
+        bool AskForConfirmation(string information);
     }
 }

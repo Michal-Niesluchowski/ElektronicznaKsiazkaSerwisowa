@@ -14,6 +14,8 @@ using System.Windows;
 using EKS.FullClient.Framework.UserDialog;
 using EKS.BackEnd.DAL.Repositories;
 using EKS.BackEnd.DAL.Entities;
+using System.Collections.ObjectModel;
+using System.Windows.Data;
 
 namespace EKS.FullClient.ViewModels
 {
@@ -51,6 +53,7 @@ namespace EKS.FullClient.ViewModels
             EditCarCommand = new RelayCommand(action => EditCar());
             SaveCarToDriveCommand = new RelayCommand(action => SaveCarToDrive());
             EditRepairCommand = new RelayCommand(action => EditRepair(action));
+            DeleteRepairCommand = new RelayCommand(action => DeleteRepair(action), enable => true);
         }
         #endregion
 
@@ -84,6 +87,7 @@ namespace EKS.FullClient.ViewModels
         public ICommand EditCarCommand { get; private set; }
         public ICommand SaveCarToDriveCommand { get; private set; }
         public ICommand EditRepairCommand { get; private set; }
+        public ICommand DeleteRepairCommand { get; private set; }
         #endregion
 
         #region methods
@@ -119,7 +123,7 @@ namespace EKS.FullClient.ViewModels
 
                 if (outcome == true)
                 {
-                    _userDialogService.InformUser("Plik z Twoim autem został zapisany.");
+                    _userDialogService.InformUser("Plik został zapisany.");
                 }
                 else
                 {
@@ -135,6 +139,18 @@ namespace EKS.FullClient.ViewModels
             _tempDataService.SaveRepair(selectedRepair);
 
             _navigationService.NavigateToControl(ControlsRegister.EditRepairControl);
+        }
+
+        private void DeleteRepair(object parameter)
+        {
+            bool result = _userDialogService.AskForConfirmation("Czy chcesz usunąć naprawę?");
+
+            if (result == true)
+            {
+                Repair selectedRepair = parameter as Repair;
+
+                CurrentCar.DeleteRepair(selectedRepair.Id);
+            }
         }
         #endregion
     }

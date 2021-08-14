@@ -24,5 +24,10 @@ namespace EKS.BackEnd.DAL.Entities
             return this.Name == other.Name &&
                    this.Plate == other.Plate;
         }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
     }
 }
