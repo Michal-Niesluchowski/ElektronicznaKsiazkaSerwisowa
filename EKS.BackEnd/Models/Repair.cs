@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EKS.BackEnd.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace EKS.BackEnd.Models
         #endregion
 
         #region contructors
+        public Repair()
+        {
+        }
+        
         public Repair(DateTime date, string description, decimal cost, string workshopName)
         {
             this.Date = date;
@@ -87,6 +92,30 @@ namespace EKS.BackEnd.Models
         #endregion
 
         #region methods
+        public RepairEntity ToEntity()
+        {
+            return new RepairEntity
+            {
+                Date = this.Date,
+                Description = this.Description,
+                Cost = this.Cost,
+                WorkshopName = this.WorkshopName,
+                Id = this.Id
+            };
+        }
+        
+        public static Repair FromEntity(RepairEntity repairEntity)
+        {
+            return new Repair
+            {
+                Cost = repairEntity.Cost,
+                Date = repairEntity.Date,
+                Description = repairEntity.Description,
+                Id = repairEntity.Id,
+                WorkshopName = repairEntity.WorkshopName
+            };
+        }
+
         public override bool Equals(object obj)
         {
             Repair other = obj as Repair;
@@ -101,7 +130,7 @@ namespace EKS.BackEnd.Models
                    this.Description == other.Description &&
                    this.WorkshopName == other.WorkshopName;
         }
-
+        
         public override int GetHashCode()
         {
             return base.GetHashCode();

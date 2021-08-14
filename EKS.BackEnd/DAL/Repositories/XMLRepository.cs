@@ -9,23 +9,45 @@ using System.Xml.Serialization;
 
 namespace EKS.BackEnd.DAL.Repositories
 {
-    public class XMLRepository
+    public class XmlRepository : IXmlRepository
     {
-        public bool CreateNewCar(CarEntity car, string saveDestination)
+        public bool SaveCar(CarEntity car, string fullFilePath)
         {
-            //Prepare full save path
-            string fullSavePath = Path.Combine(saveDestination, car.Name);
-            fullSavePath += ".xml";
-
-            //Serialize to XML
-            using (TextWriter textWriter = new StreamWriter(fullSavePath))
+            try
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(CarEntity));
-                xmlSerializer.Serialize(textWriter, car);
-            }
+                using (TextWriter textWriter = new StreamWriter(fullFilePath))
+                {
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(CarEntity));
+                    xmlSerializer.Serialize(textWriter, car);
+                }
 
-            //Finalize
-            return true;
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        public CarEntity LoadCar(string fullFilePath)
+        {
+            try
+            {
+                CarEntity result;
+
+                using (FileStream fileStream = new FileStream(fullFilePath, FileMode.Open))
+                {
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(CarEntity));
+                    result = (CarEntity)xmlSerializer.Deserialize(fileStream);
+                }
+
+                return result;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

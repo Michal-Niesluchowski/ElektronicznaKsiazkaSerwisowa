@@ -43,7 +43,8 @@
   <ItemGroup>
     <Compile Include="DAL\Entities\CarEntity.cs" />
     <Compile Include="DAL\Entities\RepairEntity.cs" />
-    <Compile Include="DAL\Repositories\XMLRepository.cs" />
+    <Compile Include="DAL\Repositories\IXmlRepository.cs" />
+    <Compile Include="DAL\Repositories\XmlRepository.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Repair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
