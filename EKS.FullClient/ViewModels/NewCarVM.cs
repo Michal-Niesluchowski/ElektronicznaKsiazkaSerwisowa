@@ -23,7 +23,8 @@ namespace EKS.FullClient.ViewModels
         #endregion
 
         #region constructors
-        public NewCarVM(INavigationService navigationService, ITempDataService tempDataService)
+        public NewCarVM(INavigationService navigationService,
+                        ITempDataService tempDataService)
         {
             _navigationService = navigationService;
             _tempDataService = tempDataService;

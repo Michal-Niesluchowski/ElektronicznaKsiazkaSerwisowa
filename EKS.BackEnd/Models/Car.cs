@@ -1,8 +1,11 @@
-﻿using System;
+﻿using EKS.BackEnd.DAL.Entities;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace EKS.BackEnd.Models
 {
@@ -15,6 +18,9 @@ namespace EKS.BackEnd.Models
         #endregion
 
         #region constructors
+        public Car()
+        {
+        }
         public Car(string name, string plate)
         {
             this.Name = name;
@@ -71,6 +77,35 @@ namespace EKS.BackEnd.Models
             this.Repairs.Add(repair);
         }
 
+        public CarEntity ToEntity()
+        {
+            CarEntity result = new CarEntity
+            {
+                Name = this.Name,
+                Plate = this.Plate,
+                Repairs = new List<RepairEntity>()
+            };
+
+            foreach (Repair repair in Repairs)
+            {
+                result.Repairs.Add(repair.ToEntity());
+            }
+
+            return result;
+        }
+
+        public static Car FromEntity(CarEntity carEntity)
+        {
+            Car result = new Car(carEntity.Name, carEntity.Plate);
+
+            foreach (RepairEntity repairEntity in carEntity.Repairs)
+            {
+                result.AddRepair(Repair.FromEntity(repairEntity));
+            }
+
+            return result;
+        }
+
         public override string ToString()
         {
             return Name + Plate;
@@ -78,8 +113,8 @@ namespace EKS.BackEnd.Models
 
         public override bool Equals(object obj)
         {
-            Car other = obj as Car;  
-            
+            Car other = obj as Car;
+
             if (other == null)
             {
                 return false;

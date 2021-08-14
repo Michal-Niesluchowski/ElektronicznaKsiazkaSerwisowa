@@ -47,7 +47,6 @@
                        Text="Tablica rejestracyjna"/>
             <TextBlock Grid.Row="3" Margin="5,0,5,5" Style="{StaticResource JustText}" 
                        Text="{Binding CurrentCar.Plate}"/>
-            
         </Grid>
 
         <!--Buttons-->
@@ -67,10 +66,10 @@
                     Command="{Binding AddNewRepairCommand}"/>
             <Button Grid.Row="1" Content="Edytuj dane auta" Margin="0,10,0,0" Width="180" Height="50"
                     Command="{Binding EditCarCommand}"/>
-            <Button Grid.Row="2" Content="Zapisz" Margin="0,10,0,0" Width="180" Height="50"/>
+            <Button Grid.Row="2" Content="Zapisz" Margin="0,10,0,0" Width="180" Height="50"
+                    Command="{Binding SaveCarToDriveCommand}"/>
             <Button Grid.Row="3" Content="Wróć do menu" Margin="0,10,0,0" Width="180" Height="50"
                     Command="{Binding BackToMenuCommand}"/>
-        
         </Grid>
 
         <!--Background for table with repairs-->

@@ -1,4 +1,7 @@
 001. As a user, I want to add new car, so I can start to use application.
-002. As a user, I want to see list of rapairs of my car, so I can review what repairs were done in my car.
+002. As a user, I want to see list of rapairs of my car, 
+	so I can review what repairs were done in my car.
 003. As a user, I want to add new rapair, so I can start to keep track of repairs in my car.
 004. As a user, I want to edit car details, because I made typo when creating this car.
+005. As a user, I want to save and  load my car with repairs, 
+	so I don't have to start from scratch everytime I launch application.

@@ -36,7 +36,8 @@ namespace EKS.FullClient.ViewModels
             RepairWorkshopName = newRepair.WorkshopName;
         }
 
-        public NewRepairVM(INavigationService navigationService, ITempDataService tempDataService)
+        public NewRepairVM(INavigationService navigationService,
+                           ITempDataService tempDataService)
         {
             _navigationService = navigationService;
             _tempDataService = tempDataService;
@@ -169,7 +170,6 @@ namespace EKS.FullClient.ViewModels
 
             return true;
         }
-
         #endregion
     }
 }

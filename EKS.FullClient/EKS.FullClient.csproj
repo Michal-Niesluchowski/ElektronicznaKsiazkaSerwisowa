@@ -64,6 +64,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Framework\UserDialog\UserDialogService.cs" />
+    <Compile Include="Framework\UserDialog\IUserDialogService.cs" />
     <Compile Include="Framework\Ioc\IocConfiguration.cs" />
     <Compile Include="Framework\Navigation\ControlsRegister.cs" />
     <Compile Include="Framework\Navigation\INavigationService.cs" />

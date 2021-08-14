@@ -11,5 +11,18 @@ namespace EKS.BackEnd.DAL.Entities
         public string Name { get; set; }
         public string Plate { get; set; }
         public List<RepairEntity> Repairs { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            CarEntity other = obj as CarEntity;
+
+            if (other == null)
+            {
+                return false;
+            }
+
+            return this.Name == other.Name &&
+                   this.Plate == other.Plate;
+        }
     }
 }
